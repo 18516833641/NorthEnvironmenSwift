@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (5.2.2)
+  - IQKeyboardManager (6.4.2)
+  - JXCategoryView (1.5.6)
+  - MJRefresh (3.2.3)
+  - ORCharts (2.1.8):
+    - ORCharts/Line (= 2.1.8)
+    - ORCharts/Ring (= 2.1.8)
+    - ORCharts/Util (= 2.1.8)
+  - ORCharts/Line (2.1.8):
+    - ORCharts/Util
+  - ORCharts/Ring (2.1.8):
+    - ORCharts/Util
+  - ORCharts/Util (2.1.8)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - IQKeyboardManager (~> 6.4.0)
+  - JXCategoryView
+  - MJRefresh (~> 3.2.0)
+  - ORCharts (~> 2.1.8)
+  - SDWebImage (~> 5.0)
+  - SVProgressHUD (~> 2.2.5)
+  - SwiftyJSON (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IQKeyboardManager
+    - JXCategoryView
+    - MJRefresh
+    - ORCharts
+    - SDWebImage
+    - SVProgressHUD
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  IQKeyboardManager: b41e0a4943fbac4c11a239d31a688667675f962e
+  JXCategoryView: 603ccd8277a89b1a73e9cedb9d8ed4b294576008
+  MJRefresh: 2b1214a2dc8f4df4c5dcb028ea2ad4e245425fb7
+  ORCharts: af561ca7e1692178be3a5c8e68c667dabd971b04
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 7bd5905268372c5fe14bfae59ce002fca3fb68c1
+
+COCOAPODS: 1.8.4

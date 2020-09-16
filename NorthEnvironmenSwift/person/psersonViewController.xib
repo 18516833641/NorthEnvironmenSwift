@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="psersonViewController" customModule="NorthEnvironmenSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="phone_Number" destination="0Fy-pJ-2qB" id="mcb-Kj-ZmS"/>
+                <outlet property="tableView" destination="4CE-AG-bMN" id="j8a-xL-CXV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laF-kI-03J">
+                    <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Neh-AI-Abd">
+                            <rect key="frame" x="20" y="30" width="60" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="5dE-TU-6AL"/>
+                                <constraint firstAttribute="width" constant="60" id="iQJ-7h-XGQ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fy-pJ-2qB">
+                            <rect key="frame" x="100" y="49.5" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0Fy-pJ-2qB" firstAttribute="centerY" secondItem="Neh-AI-Abd" secondAttribute="centerY" id="3M2-6n-Qfp"/>
+                        <constraint firstItem="Neh-AI-Abd" firstAttribute="leading" secondItem="laF-kI-03J" secondAttribute="leading" constant="20" id="OU8-AK-Oda"/>
+                        <constraint firstItem="0Fy-pJ-2qB" firstAttribute="leading" secondItem="Neh-AI-Abd" secondAttribute="leading" constant="80" id="bIj-k3-dPl"/>
+                        <constraint firstItem="Neh-AI-Abd" firstAttribute="centerY" secondItem="laF-kI-03J" secondAttribute="centerY" id="jIG-vu-Kau"/>
+                        <constraint firstAttribute="height" constant="120" id="lO8-4D-sg0"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4CE-AG-bMN">
+                    <rect key="frame" x="0.0" y="164" width="414" height="698"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="SE0-4a-IxA"/>
+                        <outlet property="delegate" destination="-1" id="oP8-B9-d7Y"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="laF-kI-03J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Ji-0b-3Ps"/>
+                <constraint firstItem="4CE-AG-bMN" firstAttribute="top" secondItem="laF-kI-03J" secondAttribute="bottom" id="9yt-MS-4gP"/>
+                <constraint firstItem="laF-kI-03J" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ccy-PW-qKK"/>
+                <constraint firstItem="4CE-AG-bMN" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="FJe-83-2xa"/>
+                <constraint firstItem="laF-kI-03J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qQ2-ba-vNI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4CE-AG-bMN" secondAttribute="bottom" id="rva-tq-c5I"/>
+                <constraint firstItem="4CE-AG-bMN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yo6-uV-Thz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="117"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="user" width="200" height="200"/>
+    </resources>
+</document>

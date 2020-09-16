@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="listDetailViewController" customModule="NorthEnvironmenSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="textView" destination="AkS-Wz-YOl" id="e01-7O-Zxi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_gsjj" translatesAutoresizingMaskIntoConstraints="NO" id="IuR-yT-zu5">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkS-Wz-YOl">
+                    <rect key="frame" x="20" y="164" width="335" height="494"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="IuR-yT-zu5" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="7wr-YF-7NQ"/>
+                <constraint firstItem="AkS-Wz-YOl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="DUe-bO-4Tq"/>
+                <constraint firstItem="IuR-yT-zu5" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="G5n-vh-wsh"/>
+                <constraint firstItem="IuR-yT-zu5" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="XnF-Sp-sTR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AkS-Wz-YOl" secondAttribute="trailing" constant="20" id="Z2d-uv-Ow3"/>
+                <constraint firstItem="AkS-Wz-YOl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cwa-6N-rtb"/>
+                <constraint firstItem="AkS-Wz-YOl" firstAttribute="centerY" secondItem="IuR-yT-zu5" secondAttribute="centerY" id="lNR-ot-rw2"/>
+                <constraint firstItem="IuR-yT-zu5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="w5Z-2T-Hcb"/>
+                <constraint firstItem="AkS-Wz-YOl" firstAttribute="centerX" secondItem="IuR-yT-zu5" secondAttribute="centerX" id="wC0-df-xYq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="117"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_gsjj" width="750" height="1198"/>
+    </resources>
+</document>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="homeViewController" customModule="NorthEnvironmenSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBacking_02" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-IO-18O">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRT-Ms-UlS">
+                    <rect key="frame" x="40" y="144" width="295" height="150"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="q5W-uu-wgo"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Dwg-ij-tGS" appends="YES" id="ONg-rj-atC"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKw-EE-H7L">
+                    <rect key="frame" x="30" y="361" width="315" height="200"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uWs-VW-Rgh">
+                            <rect key="frame" x="-222.66666666666666" y="21" width="760.33333333333337" height="74"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rui-eX-lIe">
+                                    <rect key="frame" x="0.0" y="0.0" width="240.33333333333334" height="74"/>
+                                    <state key="normal" title="  公司简介" backgroundImage="home_butBack">
+                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onebuttonAction:" destination="-1" eventType="touchUpInside" id="TQu-fR-hsh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYn-8v-SgF">
+                                    <rect key="frame" x="260.33333333333331" y="0.0" width="240" height="74"/>
+                                    <state key="normal" title="  资质荣誉" backgroundImage="home_butBack">
+                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="twoButtonAction:" destination="-1" eventType="touchUpInside" id="e9s-fg-2tu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-jM-Zog">
+                                    <rect key="frame" x="520.33333333333337" y="0.0" width="240" height="74"/>
+                                    <state key="normal" title="  主营业务" backgroundImage="home_butBack">
+                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="threeButtonAction:" destination="-1" eventType="touchUpInside" id="vMn-XM-m5U"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="riC-jz-Vhx">
+                            <rect key="frame" x="-222.66666666666666" y="132" width="760.33333333333337" height="74"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMH-DL-3uP">
+                                    <rect key="frame" x="0.0" y="0.0" width="240.33333333333334" height="74"/>
+                                    <state key="normal" title="  主导技术" backgroundImage="home_butBack">
+                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="fourButtonAction:" destination="-1" eventType="touchUpInside" id="6b8-V3-W6b"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yho-0X-sT5" userLabel="行业应用">
+                                    <rect key="frame" x="260.33333333333331" y="0.0" width="240" height="74"/>
+                                    <state key="normal" title="  行业应用" backgroundImage="home_butBack">
+                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="fiveButtonAction:" destination="-1" eventType="touchUpInside" id="4ar-Cz-5Mu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvl-mP-UDG">
+                                    <rect key="frame" x="520.33333333333337" y="0.0" width="240" height="74"/>
+                                    <state key="normal" title="  工程案例" backgroundImage="home_butBack">
+                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sixButtonAction:" destination="-1" eventType="touchUpInside" id="hiU-lq-h8I"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="uWs-VW-Rgh" firstAttribute="centerX" secondItem="RKw-EE-H7L" secondAttribute="centerX" id="EOZ-66-HK3"/>
+                        <constraint firstItem="uWs-VW-Rgh" firstAttribute="top" secondItem="RKw-EE-H7L" secondAttribute="top" constant="21.000000000000004" id="INK-fj-Nok"/>
+                        <constraint firstAttribute="height" constant="200" id="K6a-dz-2Qk"/>
+                        <constraint firstItem="riC-jz-Vhx" firstAttribute="top" secondItem="uWs-VW-Rgh" secondAttribute="bottom" constant="36.999999999999972" id="WLD-cM-vW0"/>
+                        <constraint firstItem="riC-jz-Vhx" firstAttribute="centerX" secondItem="RKw-EE-H7L" secondAttribute="centerX" id="jsM-zI-t6b"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="QIO-IO-18O" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="1dE-QP-MiY"/>
+                <constraint firstItem="vRT-Ms-UlS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="6JW-om-9i1"/>
+                <constraint firstItem="RKw-EE-H7L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="6Wf-AZ-Ml4"/>
+                <constraint firstItem="RKw-EE-H7L" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H2M-1X-z3q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RKw-EE-H7L" secondAttribute="trailing" constant="30" id="J3H-JD-6Qw"/>
+                <constraint firstItem="vRT-Ms-UlS" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" constant="-80" id="JoT-wG-QM8"/>
+                <constraint firstItem="RKw-EE-H7L" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="50" id="LWY-zP-fXN"/>
+                <constraint firstItem="QIO-IO-18O" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zbu-q0-00m"/>
+                <constraint firstItem="QIO-IO-18O" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="fVY-EF-JWf"/>
+                <constraint firstItem="vRT-Ms-UlS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="itX-qy-Upw"/>
+                <constraint firstItem="QIO-IO-18O" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="jdB-d9-s27"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="139"/>
+        </view>
+        <tapGestureRecognizer id="Dwg-ij-tGS">
+            <connections>
+                <action selector="zeroAction:" destination="-1" id="QLy-4C-p1q"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="homeBacking_02" width="500" height="796.66668701171875"/>
+        <image name="home_butBack" width="120" height="37.333332061767578"/>
+    </resources>
+</document>
