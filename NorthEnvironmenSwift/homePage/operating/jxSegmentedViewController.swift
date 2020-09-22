@@ -33,11 +33,11 @@ class jxSegmentedViewController: AnalyticsViewController {
         
         //渐变色
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
+        gradientLayer.frame = segmentedView.bounds
         self.view.layer.addSublayer(gradientLayer)
 
-        let startColor = UIColor(red: 145/255.0, green: 60/255.0, blue: 229/255.0, alpha: 1).cgColor
-        let endColor = UIColor(red: 40/255.0, green: 248/255.0, blue: 239/255.0, alpha: 1).cgColor
+        let startColor = UIColor(red: 29/255.0, green: 234/255.0, blue: 255/255.0, alpha: 1).cgColor
+        let endColor = UIColor(red: 139/255.0, green: 205/255.0, blue: 209/255.0, alpha: 1).cgColor
         gradientLayer.colors = [startColor, endColor]
         let gradientLocations:[NSNumber] = [0,1]
         gradientLayer.locations = gradientLocations
@@ -45,9 +45,9 @@ class jxSegmentedViewController: AnalyticsViewController {
         gradientLayer.endPoint = CGPoint.init(x: 1, y: 1)
         
         //添加在控制器View上的子视图被Layer层绘图覆盖.
-//        segmentedView.layer.zPosition = 0
-//        self.view.layer.zPosition = 3
-//        self.view.layer.addSublayer(segmentedView.layer)
+        segmentedView.layer.zPosition = 0
+        self.view.layer.zPosition = 3
+        self.view.layer.addSublayer(segmentedView.layer)
 //        self.segmentedView.bringSubviewToFront(personBut)
         
         //1、初始化JXSegmentedView
@@ -58,13 +58,13 @@ class jxSegmentedViewController: AnalyticsViewController {
         segmentedDataSource = JXSegmentedTitleDataSource()
         segmentedDataSource.titles = ["项目简介","工艺流程","历史曲线","故障信息"]
         segmentedDataSource.titleNormalFont = UIFont.systemFont(ofSize: 17)
-        segmentedDataSource.titleNormalColor = .white
+        segmentedDataSource.titleNormalColor = .lightGray
         segmentedDataSource.titleSelectedColor = .white
         //title的颜色是否渐变过渡
         segmentedDataSource.isTitleColorGradientEnabled = true
         segmentedDataSource.reloadData(selectedIndex: 0)
         //当collectionView.contentSize.width小于JXSegmentedView的宽度时，是否将itemSpacing均分。
-        segmentedDataSource.isItemSpacingAverageEnabled = false
+        segmentedDataSource.isItemSpacingAverageEnabled = true
         // title是否缩放。使用该效果时，务必保证titleNormalFont和titleSelectedFont值相同。
         segmentedDataSource.isTitleZoomEnabled = true
 //        sTitleZoomEnabled为true才生效。是对字号的缩放，比如titleNormalFont的pointSize为10，放大之后字号就是10*1.2=12。
@@ -95,7 +95,7 @@ class jxSegmentedViewController: AnalyticsViewController {
         if isiPhoneXScreen() {
             
             //IPhone状态栏高44 导航栏高44 tabbabr高度49 虚拟Home高度34
-            listContainerView.frame = CGRect(x: 0, y: segmentedView.frame.maxY + 20, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height - segmentedView.frame.maxY - 10 - 34 - 49 )
+            listContainerView.frame = CGRect(x: 0, y: segmentedView.frame.maxY - 35, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height - segmentedView.frame.maxY - 40 - 49 )
             
         }else if isiPhonePluscreen(){
             

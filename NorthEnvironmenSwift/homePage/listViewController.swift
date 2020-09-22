@@ -121,7 +121,7 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
         
         cell.titleLabel.text = listData.tile
         
-        print("----------------\(BERKKURL.Url_SeverImage + listData.thmb!)")
+//        print("----------------\(BERKKURL.Url_SeverImage + listData.thmb!)")
         
         
 //        let url  = "http://39.101.181.123:8080/bk/upload/files/20200822/20200822155111_1598082729719.png"
