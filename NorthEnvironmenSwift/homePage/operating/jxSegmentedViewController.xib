@@ -19,6 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11_05" translatesAutoresizingMaskIntoConstraints="NO" id="6vY-nb-GJh">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="knZ-Rc-Zd5"/>
+                    </constraints>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6p-1L-54J" customClass="JXSegmentedView" customModule="NorthEnvironmenSwift">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,6 +35,9 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="6vY-nb-GJh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AdA-1J-H1D"/>
+                <constraint firstItem="6vY-nb-GJh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IFu-Ft-SkU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6vY-nb-GJh" secondAttribute="trailing" id="LbO-pD-Kbr"/>
                 <constraint firstItem="g6p-1L-54J" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="Ucv-p0-PHH"/>
                 <constraint firstItem="g6p-1L-54J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dnk-UB-SjV"/>
                 <constraint firstItem="g6p-1L-54J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sad-5T-aZs"/>
@@ -37,4 +46,7 @@
             <point key="canvasLocation" x="139" y="119"/>
         </view>
     </objects>
+    <resources>
+        <image name="11_05" width="325" height="40"/>
+    </resources>
 </document>

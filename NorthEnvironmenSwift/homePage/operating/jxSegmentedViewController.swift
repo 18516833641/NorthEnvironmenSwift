@@ -32,22 +32,24 @@ class jxSegmentedViewController: AnalyticsViewController {
         func setupSegmentedView()  {
         
         //渐变色
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = segmentedView.bounds
-        self.view.layer.addSublayer(gradientLayer)
-
-        let startColor = UIColor(red: 29/255.0, green: 234/255.0, blue: 255/255.0, alpha: 1).cgColor
-        let endColor = UIColor(red: 139/255.0, green: 205/255.0, blue: 209/255.0, alpha: 1).cgColor
-        gradientLayer.colors = [startColor, endColor]
-        let gradientLocations:[NSNumber] = [0,1]
-        gradientLayer.locations = gradientLocations
-        gradientLayer.startPoint = CGPoint.init(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint.init(x: 1, y: 1)
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = segmentedView.bounds
+//        self.view.layer.addSublayer(gradientLayer)
+//
+////        let startColor = UIColor(red: 106/255.0, green: 227/255.0, blue: 233/255.0, alpha: 0.67).cgColor
+////        let endColor = UIColor(red: 252/255.0, green: 252/255.0, blue: 252/255.0, alpha: 0.67).cgColor
+//            let startColor = UIColor(red: 0/255.0, green: 241/255.0, blue: 254/255.0, alpha: 0.67).cgColor
+//            let endColor = UIColor(red: 33/255.0, green: 66/255.0, blue: 81/255.0, alpha: 0.67).cgColor
+//        gradientLayer.colors = [startColor, endColor]
+//            let gradientLocations:[NSNumber] = [0.5,1]
+//        gradientLayer.locations = gradientLocations
+//        gradientLayer.startPoint = CGPoint.init(x: 0, y: 0)
+//        gradientLayer.endPoint = CGPoint.init(x: 1, y: 0)
         
         //添加在控制器View上的子视图被Layer层绘图覆盖.
-        segmentedView.layer.zPosition = 0
-        self.view.layer.zPosition = 3
-        self.view.layer.addSublayer(segmentedView.layer)
+//        segmentedView.layer.zPosition = 0
+//        self.view.layer.zPosition = 3
+//        self.view.layer.addSublayer(segmentedView.layer)
 //        self.segmentedView.bringSubviewToFront(personBut)
         
         //1、初始化JXSegmentedView
@@ -58,8 +60,10 @@ class jxSegmentedViewController: AnalyticsViewController {
         segmentedDataSource = JXSegmentedTitleDataSource()
         segmentedDataSource.titles = ["项目简介","工艺流程","历史曲线","故障信息"]
         segmentedDataSource.titleNormalFont = UIFont.systemFont(ofSize: 17)
-        segmentedDataSource.titleNormalColor = .lightGray
-        segmentedDataSource.titleSelectedColor = .white
+        segmentedDataSource.titleNormalColor = UIColor(red: 26/255.0, green: 35/255.0, blue: 49/255.0, alpha: 1)
+//      segmentedDataSource.titleNormalColor = UIColor(red: 19/255.0, green: 134/255.0, blue: 139/255.0, alpha: 1)
+            
+        segmentedDataSource.titleSelectedColor = UIColor(red: 40/255.0, green: 243/255.0, blue: 253/255.0, alpha: 1)
         //title的颜色是否渐变过渡
         segmentedDataSource.isTitleColorGradientEnabled = true
         segmentedDataSource.reloadData(selectedIndex: 0)
@@ -103,7 +107,7 @@ class jxSegmentedViewController: AnalyticsViewController {
             
         }else{
             
-            listContainerView.frame = CGRect(x: 0, y: segmentedView.frame.maxY + 15, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height-segmentedView.frame.maxY-49-15)
+            listContainerView.frame = CGRect(x: 0, y: segmentedView.frame.maxY - 35, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height-segmentedView.frame.maxY-49-15)
             
         }
         self.view.addSubview(listContainerView)
