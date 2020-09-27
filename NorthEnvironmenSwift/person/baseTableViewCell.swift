@@ -14,6 +14,10 @@ class baseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var rightLabel: UILabel!
+    
+    @IBOutlet weak var backImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

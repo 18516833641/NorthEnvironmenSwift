@@ -12,21 +12,69 @@ class operatingFourViewController: AnalyticsViewController,JXSegmentedListContai
     func listView() -> UIView {
         return self.view
     }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let nameArr = ["故障中","已解除"]
+    let rightArr = ["2020-06-09","2020-07-09"]
+    let imageArr = ["gzz","yjc"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+         tableView.register(UINib(nibName: "baseTableViewCell", bundle: nil), forCellReuseIdentifier: "baseTableViewCell")
     }
 
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension operatingFourViewController:UITableViewDelegate,UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell:baseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "baseTableViewCell") as? baseTableViewCell else {
+            let cells = baseTableViewCell(style: .default, reuseIdentifier: "baseTableViewCell")
+            cells.backgroundColor = .groupTableViewBackground
+            return cells
+        }
+        cell.rightLabel.isHidden = false
+        cell.headIcon.image = UIImage.init(named: imageArr[indexPath.item])
+        cell.titleLabel.text = nameArr[indexPath.row]
+        cell.rightLabel.text = rightArr[indexPath.row]
+        
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    switch indexPath.row {
+        case 0:
+            let vc = operatingFourDetaileController()
+            vc.title = "已处理详情页"
+            self.navigationController?.pushViewController(vc, animated: true)
+           
+           break
+        case 1:
+            let vc = operatingFourDetaileController()
+            vc.title = "故障中详情页"
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            break
+        default: break
+            
+        }
+        
+    }
+   
 }

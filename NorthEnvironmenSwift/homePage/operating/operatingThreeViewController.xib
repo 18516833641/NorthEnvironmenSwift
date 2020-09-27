@@ -19,17 +19,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-hj-YXU">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-hj-YXU">
+                    <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Mp1-Yu-ssf"/>
+                        <outlet property="delegate" destination="-1" id="Ove-ys-UBL"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="Xfn-hj-YXU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DNy-Z0-7kh"/>
                 <constraint firstItem="Xfn-hj-YXU" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="NdF-0n-pwT"/>
-                <constraint firstItem="Xfn-hj-YXU" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="Sk1-uO-7em"/>
-                <constraint firstItem="Xfn-hj-YXU" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ZNT-we-gNz"/>
                 <constraint firstItem="Xfn-hj-YXU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ei1-My-4ws"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xfn-hj-YXU" secondAttribute="bottom" constant="20" id="k3s-e9-40I"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="119"/>

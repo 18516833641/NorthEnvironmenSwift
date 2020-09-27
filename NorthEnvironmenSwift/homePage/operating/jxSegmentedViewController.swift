@@ -59,7 +59,7 @@ class jxSegmentedViewController: AnalyticsViewController {
         //segmentedViewDataSource一定要通过属性强持有！！！！！！！！！
         segmentedDataSource = JXSegmentedTitleDataSource()
         segmentedDataSource.titles = ["项目简介","工艺流程","历史曲线","故障信息"]
-        segmentedDataSource.titleNormalFont = UIFont.systemFont(ofSize: 17)
+        segmentedDataSource.titleNormalFont = UIFont.systemFont(ofSize: 15)
         segmentedDataSource.titleNormalColor = UIColor(red: 26/255.0, green: 35/255.0, blue: 49/255.0, alpha: 1)
 //      segmentedDataSource.titleNormalColor = UIColor(red: 19/255.0, green: 134/255.0, blue: 139/255.0, alpha: 1)
             
@@ -127,7 +127,7 @@ extension jxSegmentedViewController:JXSegmentedViewDelegate,JXSegmentedListConta
     
     //遵从JXSegmentedListContainerViewListDelegate协议的实例
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-       print("=====\(index)")
+//       print("=====\(index)")
         switch index {
         case 0:
             //详情

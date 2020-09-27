@@ -10,6 +10,10 @@ import UIKit
 
 class passWordViewController: AnalyticsViewController {
 
+    @IBOutlet weak var oldPassWord: UITextField!
+    @IBOutlet weak var newPassWord: UITextField!
+    @IBOutlet weak var nextPassWord: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +21,9 @@ class passWordViewController: AnalyticsViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func contenAction(_ sender: Any) {
+        
     }
-    */
+ 
 
 }

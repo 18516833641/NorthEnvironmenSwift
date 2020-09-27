@@ -32,7 +32,7 @@ class psersonViewController: AnalyticsViewController {
 extension psersonViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,16 +56,22 @@ extension psersonViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let cellData = dataSource[indexPath.row]
-//        if self.clickOnTheCallback != nil {
-//            self.clickOnTheCallback!(cellData.title ?? "")
-//        }
-//
-//        if self.menuTheCellback != nil {
-//            self.menuTheCellback!(cellData)
-//        }
-//
-//        self.navigationController?.popViewController(animated: true)
+    switch indexPath.row {
+        case 0:
+            let vc = userinfoViewController()
+            vc.title = "账户信息"
+            self.navigationController?.pushViewController(vc, animated: true)
+           
+           break
+        case 1:
+            let vc = passWordViewController()
+            vc.title = "修改密码"
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            break
+        default: break
+            
+        }
         
     }
    
