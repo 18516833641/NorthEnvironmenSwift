@@ -1,3 +1,4 @@
+
 platform :ios , '11.0'
 
 target 'NorthEnvironmenSwift' do
@@ -7,11 +8,8 @@ pod 'SwiftyJSON', '~> 5.0.0'
 pod 'SVProgressHUD' , '~> 2.2.5'
 pod 'SDWebImage', '~> 5.0'
 pod 'MJRefresh','~> 3.2.0'
-pod 'SVProgressHUD','~> 2.2.5'
 pod 'IQKeyboardManager', '~> 6.4.0'
-pod 'ORCharts', '~> 2.1.8'
-pod 'Charts'
-pod 'ChartsRealm'
+pod 'Charts', '~> 3.5.0'
 
 
 use_frameworks!

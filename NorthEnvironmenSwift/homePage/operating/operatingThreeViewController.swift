@@ -164,9 +164,6 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         default:
             return cell
         }
-        
-//         cell.contenLabel.text = titleArr1[indexPath.row]
-//         cell.titleLabel.text = titleArr1[indexPath.row]
       
         return cell
         
@@ -174,7 +171,9 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = operatingThreeDetaileController()
+        vc.title = "折线图详情页"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
    
 }

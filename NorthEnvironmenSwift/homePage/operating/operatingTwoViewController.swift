@@ -32,46 +32,64 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func yanqiAction(_ sender: Any) {
         
         
-        let vc = listViewController()
-        vc.title = "运营项目"
-        vc.url = BERKKURL.URL_OperatingList
-        vc.project = .one
+//        let vc = listViewController()
+//        vc.title = "运营项目"
+//        vc.url = BERKKURL.URL_OperatingList
+//        vc.project = .one
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = operatingTwoDetaileController()
+        vc.title = "烟气系统"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //原料系统
     @IBAction func yuanliaoAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "原料系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //脱硫系统
     @IBAction func tuoliuAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "脱硫系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //水系统
     @IBAction func shuiAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "水系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //除尘系统
     @IBAction func chuchengAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "除尘系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //副产物系统
     @IBAction func fuchanwuAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "副产物系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //风机系统
     @IBAction func fengjiAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "机系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //气系统
     @IBAction func qiAction(_ sender: Any) {
-        
+        let vc = operatingTwoDetaileController()
+        vc.title = "气系统"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -103,6 +121,10 @@ extension operatingTwoViewController:UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = operatingThreeDetaileController()
+        vc.title = "折线图详情页"
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
    
