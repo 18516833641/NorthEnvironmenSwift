@@ -51,7 +51,7 @@ class listDetailViewController: AnalyticsViewController {
                 guard let content:String = model?.data?[0].content! else {
                     return
                 }
-                
+//                self.textView.textColor = .white
                 self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
                      
             }

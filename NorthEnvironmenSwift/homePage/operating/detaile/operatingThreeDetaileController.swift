@@ -16,8 +16,8 @@ class operatingThreeDetaileController: AnalyticsViewController {
     
     @IBOutlet weak var ChartView: LineChartView!
     
-    let xStr = ["1", "2", "3", "4","5","6","7","8","9"] //x轴类别项
-    let values = [98.0, 70.3, 40.1, 18.2, 40.2, 20.1, 30, 50, 120] //x轴对应的y轴数据
+    var xStr = ["1", "2", "3", "4","5","6","7","8","9"] //x轴类别项
+    var values = [98.0, 70.3, 40.1, 18.2, 40.2, 20.1, 30, 50, 120] //x轴对应的y轴数据
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +83,42 @@ class operatingThreeDetaileController: AnalyticsViewController {
        }
 
     @IBAction func timeAction(_ sender: Any) {
+        
+        Dialog()
+        
+        .wTypeSet()(DialogTypePop)
+        //弹出动画
+        .wShowAnimationSet()(AninatonZoomIn)
+            
+        //消失动画
+        .wHideAnimationSet()(AninatonZoomOut)
+            
+        //全部圆角 用法和系统的UIRectCorner相同
+        .wPopViewRectCornerSet()(DialogRectCorner.allCorners)
+            
+        //弹出位置
+        .wDirectionSet()(DiaDirection.directionDowm)
+            
+        //数据
+        .wDataSet()([
+            ["name":"日"],
+            ["name":"周"],
+            ["name":"月"],
+                     ])
+        
+            
+        .wEventFinishSet()(){ anyId, path,type  in
+         
+            self.xStr = []
+            self.values = [0.0]
+            self.setLineChartViewData(self.xStr, self.values)
+        }
+        
+            
+        .wTapViewSet()(sender as! UIView)
+        .wStart()
+        
+        
         
     }
     
