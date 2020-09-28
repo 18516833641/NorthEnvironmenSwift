@@ -10,6 +10,7 @@ PODS:
   - SDWebImage/Core (5.8.4)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
+  - WMZDialog (1.1.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SVProgressHUD (~> 2.2.5)
   - SwiftyJSON (~> 5.0.0)
+  - WMZDialog (~> 1.1.5)
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - SwiftyJSON
+    - WMZDialog
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  WMZDialog: 582ebc04124a5366f27ad8f2c6a32254b9c697d0
 
-PODFILE CHECKSUM: 516263f7f3a1faf8821a45094fa581476cbc5378
+PODFILE CHECKSUM: 86efe1fe29ef4cf3c1b70d32a66bf5799b19b084
 
 COCOAPODS: 1.8.4
