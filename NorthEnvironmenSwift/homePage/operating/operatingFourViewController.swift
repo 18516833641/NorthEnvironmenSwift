@@ -13,6 +13,8 @@ class operatingFourViewController: AnalyticsViewController,JXSegmentedListContai
         return self.view
     }
     
+    var url = ""
+    
     @IBOutlet weak var tableView: UITableView!
     
     let nameArr = ["故障中","已解除"]

@@ -67,7 +67,7 @@ extension BKHttpTool {
                 let json = JSON(response.value as Any)
                 
 //                getTestPrint(response.data)
-                print("-------:\(json)")
+//                print("-------:\(json)")
                 successed(nil, response.data)
                 
             case .failure:

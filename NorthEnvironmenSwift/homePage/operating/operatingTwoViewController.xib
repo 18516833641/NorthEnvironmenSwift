@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,16 +16,16 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YYXM_zxt" translatesAutoresizingMaskIntoConstraints="NO" id="af0-Cf-KIx">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-zb-lCr">
-                    <rect key="frame" x="0.0" y="333.5" width="375" height="313.5"/>
+                    <rect key="frame" x="0.0" y="368" width="414" height="348"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="2Ar-eq-4OU"/>
@@ -33,7 +33,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJq-xa-0I6" userLabel="烟气系统">
-                    <rect key="frame" x="145" y="37" width="80" height="30"/>
+                    <rect key="frame" x="167" y="77" width="80" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="EeR-Pd-4JB"/>
@@ -43,74 +43,19 @@
                         <action selector="yanqiAction:" destination="-1" eventType="touchUpInside" id="CE6-cl-uAm"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-0y-9xi" userLabel="原料系统">
-                    <rect key="frame" x="70" y="85" width="60" height="91"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-0y-9xi" userLabel="原料系统">
+                    <rect key="frame" x="42.666666666666657" y="115.66666666666669" width="80" height="100"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="coz-pD-OI2"/>
-                        <constraint firstAttribute="height" constant="91" id="nm0-RB-n6n"/>
+                        <constraint firstAttribute="width" constant="80" id="coz-pD-OI2"/>
+                        <constraint firstAttribute="height" constant="100" id="nm0-RB-n6n"/>
                     </constraints>
                     <connections>
                         <action selector="yuanliaoAction:" destination="-1" eventType="touchUpInside" id="bVj-Qb-kYW"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-KA-onw" userLabel="脱硫系统">
-                    <rect key="frame" x="109" y="120" width="60" height="120"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="oxM-wo-S53"/>
-                        <constraint firstAttribute="height" constant="120" id="vYP-Lr-f2a"/>
-                    </constraints>
-                    <connections>
-                        <action selector="tuoliuAction:" destination="-1" eventType="touchUpInside" id="9Ge-Hv-bib"/>
-                    </connections>
-                </button>
-                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFi-q5-7fn" userLabel="水系统">
-                    <rect key="frame" x="170" y="220" width="60" height="30"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="7Bp-C3-oRF"/>
-                        <constraint firstAttribute="width" constant="60" id="eOM-BF-Jw5"/>
-                    </constraints>
-                    <connections>
-                        <action selector="shuiAction:" destination="-1" eventType="touchUpInside" id="gYx-Z1-LnP"/>
-                    </connections>
-                </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVI-4u-OK9" userLabel="除尘系统">
-                    <rect key="frame" x="180" y="115" width="40" height="80"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="4pQ-dm-sfc"/>
-                        <constraint firstAttribute="height" constant="80" id="Jhh-JS-TZk"/>
-                    </constraints>
-                    <connections>
-                        <action selector="chuchengAction:" destination="-1" eventType="touchUpInside" id="TBP-Je-9w9"/>
-                    </connections>
-                </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-T6-T1k" userLabel="副产物系统">
-                    <rect key="frame" x="251" y="180" width="70" height="70"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="70" id="y9j-lC-FJP"/>
-                        <constraint firstAttribute="height" constant="70" id="zUH-CB-HLx"/>
-                    </constraints>
-                    <connections>
-                        <action selector="fuchanwuAction:" destination="-1" eventType="touchUpInside" id="ZOC-WM-m3k"/>
-                    </connections>
-                </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSi-OX-Azj" userLabel="风机系统">
-                    <rect key="frame" x="220" y="120" width="121" height="47"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="47" id="mS1-Zm-VGG"/>
-                        <constraint firstAttribute="width" constant="121" id="tP4-eU-NLR"/>
-                    </constraints>
-                    <connections>
-                        <action selector="fengjiAction:" destination="-1" eventType="touchUpInside" id="Aqd-3E-u7f"/>
-                    </connections>
-                </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cue-ur-EBR" userLabel="气系统">
-                    <rect key="frame" x="168" y="80" width="80" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cue-ur-EBR" userLabel="气系统">
+                    <rect key="frame" x="187.66666666666666" y="132.33333333333334" width="79.999999999999972" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="OHy-GS-eYz"/>
@@ -120,33 +65,88 @@
                         <action selector="qiAction:" destination="-1" eventType="touchUpInside" id="q2F-e5-Y4f"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-KA-onw" userLabel="脱硫系统">
+                    <rect key="frame" x="131" y="170" width="40" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="oxM-wo-S53"/>
+                        <constraint firstAttribute="height" constant="120" id="vYP-Lr-f2a"/>
+                    </constraints>
+                    <connections>
+                        <action selector="tuoliuAction:" destination="-1" eventType="touchUpInside" id="9Ge-Hv-bib"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVI-4u-OK9" userLabel="除尘系统">
+                    <rect key="frame" x="202.66666666666666" y="170.66666666666666" width="50" height="99.999999999999972"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="4pQ-dm-sfc"/>
+                        <constraint firstAttribute="height" constant="100" id="Jhh-JS-TZk"/>
+                    </constraints>
+                    <connections>
+                        <action selector="chuchengAction:" destination="-1" eventType="touchUpInside" id="TBP-Je-9w9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn1-T6-T1k" userLabel="副产物系统">
+                    <rect key="frame" x="281.33333333333331" y="238.66666666666663" width="100" height="75"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="y9j-lC-FJP"/>
+                        <constraint firstAttribute="height" constant="75" id="zUH-CB-HLx"/>
+                    </constraints>
+                    <connections>
+                        <action selector="fuchanwuAction:" destination="-1" eventType="touchUpInside" id="ZOC-WM-m3k"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSi-OX-Azj" userLabel="风机系统">
+                    <rect key="frame" x="270.66666666666669" y="172.33333333333334" width="121" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="mS1-Zm-VGG"/>
+                        <constraint firstAttribute="width" constant="121" id="tP4-eU-NLR"/>
+                    </constraints>
+                    <connections>
+                        <action selector="fengjiAction:" destination="-1" eventType="touchUpInside" id="Aqd-3E-u7f"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFi-q5-7fn" userLabel="水系统">
+                    <rect key="frame" x="192.66666666666666" y="282.66666666666669" width="69.999999999999972" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="7Bp-C3-oRF"/>
+                        <constraint firstAttribute="width" constant="70" id="eOM-BF-Jw5"/>
+                    </constraints>
+                    <connections>
+                        <action selector="shuiAction:" destination="-1" eventType="touchUpInside" id="gYx-Z1-LnP"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="af0-Cf-KIx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0OZ-Zn-k7s"/>
                 <constraint firstItem="ckj-zb-lCr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0Xe-AI-ZQn"/>
-                <constraint firstItem="cue-ur-EBR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="2g4-xh-Djm"/>
-                <constraint firstItem="af0-Cf-KIx" firstAttribute="top" secondItem="vJq-xa-0I6" secondAttribute="bottom" constant="-67" id="8Fi-Ot-UqC"/>
-                <constraint firstItem="vJq-xa-0I6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="145" id="AOh-oV-PaE"/>
-                <constraint firstItem="cue-ur-EBR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="168" id="BDN-oO-06K"/>
-                <constraint firstItem="HSi-OX-Azj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="220" id="F9x-qG-SgV"/>
-                <constraint firstItem="ZaP-KA-onw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="Gtr-UD-YQd"/>
+                <constraint firstItem="tn1-T6-T1k" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.6" id="1Z4-RX-FFz"/>
+                <constraint firstItem="JfE-0y-9xi" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="0.9" id="7Wt-nK-Mmk"/>
+                <constraint firstItem="vJq-xa-0I6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="88T-XO-iWw"/>
+                <constraint firstItem="ZaP-KA-onw" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="0.73" id="AHY-Ee-saD"/>
+                <constraint firstItem="tn1-T6-T1k" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.5" id="Dt5-Km-XSW"/>
                 <constraint firstItem="af0-Cf-KIx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ISO-LP-5eQ"/>
-                <constraint firstItem="vVI-4u-OK9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="115" id="J0c-qj-XxV"/>
                 <constraint firstItem="af0-Cf-KIx" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.5" id="JHY-8d-hMv"/>
-                <constraint firstItem="vVI-4u-OK9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="180" id="LCC-VA-CPL"/>
-                <constraint firstItem="HSi-OX-Azj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="YLv-Sv-6kG"/>
-                <constraint firstItem="JfE-0y-9xi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="aXS-Kh-plt"/>
-                <constraint firstItem="wFi-q5-7fn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="170" id="azV-7h-0w1"/>
+                <constraint firstItem="JfE-0y-9xi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="0.4" id="YHw-97-vTy"/>
+                <constraint firstItem="HSi-OX-Azj" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.1" id="gEN-OK-6ao"/>
                 <constraint firstItem="ckj-zb-lCr" firstAttribute="top" secondItem="af0-Cf-KIx" secondAttribute="bottom" id="hrx-GM-L1j"/>
+                <constraint firstItem="cue-ur-EBR" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.1" id="iHV-Yw-NR4"/>
                 <constraint firstItem="ckj-zb-lCr" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.5" constant="-20" id="j5p-lh-haP"/>
-                <constraint firstItem="JfE-0y-9xi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="85" id="jSi-tz-wyT"/>
-                <constraint firstItem="wFi-q5-7fn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="220" id="mWj-gc-aIC"/>
-                <constraint firstItem="ZaP-KA-onw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="109" id="qSq-du-kPx"/>
-                <constraint firstItem="tn1-T6-T1k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="180" id="thC-8T-tSG"/>
+                <constraint firstItem="HSi-OX-Azj" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.6" id="kH7-Vu-MdO"/>
+                <constraint firstItem="vVI-4u-OK9" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.2" id="nwa-c3-BZn"/>
+                <constraint firstItem="cue-ur-EBR" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="0.8" id="rXt-Ln-7aU"/>
+                <constraint firstItem="vJq-xa-0I6" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="0.5" id="ttz-l8-hi1"/>
+                <constraint firstItem="ZaP-KA-onw" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.25" id="utV-Kc-T3q"/>
+                <constraint firstItem="vVI-4u-OK9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.1" id="vVb-7g-tes"/>
                 <constraint firstItem="af0-Cf-KIx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wBv-5f-cwu"/>
-                <constraint firstItem="tn1-T6-T1k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="251" id="x5h-8e-lZU"/>
                 <constraint firstItem="ckj-zb-lCr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="x80-UV-opI"/>
+                <constraint firstItem="wFi-q5-7fn" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.1" id="xUG-S5-1Mc"/>
+                <constraint firstItem="wFi-q5-7fn" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.7" id="xW2-dl-Q8e"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="136.80000000000001" y="118.29085457271366"/>

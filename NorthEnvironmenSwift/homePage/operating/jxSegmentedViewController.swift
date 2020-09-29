@@ -141,16 +141,19 @@ extension jxSegmentedViewController:JXSegmentedViewDelegate,JXSegmentedListConta
             //工艺流程
 //            Relatedvc.detailsData = videoData
 //            Relatedvc.videodataSource = videoDeatilsData1//
+            Twovc.url = "?itmeid=1"
             return Twovc
         case 2:
         //历史曲线
         //            Relatedvc.detailsData = videoData
         //            Relatedvc.videodataSource = videoDeatilsData1//
+            Threevc.url = "?itmeid=1"
             return Threevc
             
         default:
             //故障信息
 //            Commentsvc.currentDynamic = videoData
+            fourvc.url = "?itmeid=1"
             return fourvc
         }
         

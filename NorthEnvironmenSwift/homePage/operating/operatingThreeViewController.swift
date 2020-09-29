@@ -13,6 +13,8 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
         return self.view
     }
     
+    var url = ""
+    
     @IBOutlet weak var tableView: UITableView!
     
     

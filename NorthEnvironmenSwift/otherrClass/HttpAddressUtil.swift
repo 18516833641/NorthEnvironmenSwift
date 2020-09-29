@@ -46,7 +46,7 @@ struct BERKKURL {
     public static let URL_OperatingList = "bkProgramController"
    
     //取得曲线数据
-    public static let URL_Curve = "bkGraphController/1"
+    public static let URL_Curve = "bkGraphController"
     
     
 
