@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,14 +33,14 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hhA-rP-Xw2" secondAttribute="trailing" id="DCD-wa-NFo"/>
+                <constraint firstItem="hhA-rP-Xw2" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="DcG-D6-3Vs"/>
                 <constraint firstItem="NQC-c1-CUB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="FnH-92-WTA"/>
+                <constraint firstItem="hhA-rP-Xw2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HLg-Tn-XIo"/>
+                <constraint firstItem="hhA-rP-Xw2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Jau-dv-qGb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NQC-c1-CUB" secondAttribute="bottom" constant="120" id="LeS-I2-pjV"/>
-                <constraint firstItem="hhA-rP-Xw2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ewS-If-9yt"/>
                 <constraint firstItem="NQC-c1-CUB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="j5A-Lb-1Ez"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hhA-rP-Xw2" secondAttribute="bottom" id="nQq-n3-JTz"/>
+                <constraint firstItem="hhA-rP-Xw2" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="mKf-um-XK7"/>
                 <constraint firstItem="NQC-c1-CUB" firstAttribute="centerX" secondItem="hhA-rP-Xw2" secondAttribute="centerX" id="sFq-Uy-Zls"/>
-                <constraint firstItem="hhA-rP-Xw2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xrV-54-q2E"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="119"/>

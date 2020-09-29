@@ -84,7 +84,16 @@ extension setUpViewController:UITableViewDelegate,UITableViewDataSource{
             let result = "温馨提示"
             let alertController = UIAlertController(title: result, message: "确认退出登录嘛？", preferredStyle: .alert)
             self.present(alertController, animated: true, completion: nil)
-            alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+
+            alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: { (UIAlertAction) in
+                
+                
+                let vc = loginViewController()
+                self.view.window?.rootViewController = vc
+                self.view.window?.backgroundColor = .white
+                self.view.window?.makeKeyAndVisible()
+                
+            }))
             alertController.addAction(UIAlertAction(title: "取消", style: .destructive, handler: nil))
             
             break

@@ -143,11 +143,11 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .one://运营项目
             
-//            let cellData = dataSource[indexPath.row]
+            let cellData = dataSource[indexPath.row]
             let vc = jxSegmentedViewController()
-//            vc.title = "运营项目详情"
-//            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
-//            print("-------\(vc.url)")
+            vc.title = "运营项目详情"
+            vc.listId = "/" + cellData.id!
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
             break

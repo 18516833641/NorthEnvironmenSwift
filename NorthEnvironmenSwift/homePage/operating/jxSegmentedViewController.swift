@@ -10,6 +10,9 @@ import UIKit
 //import JXSegmentedView
 
 class jxSegmentedViewController: AnalyticsViewController {
+    
+    var listId = ""
+    
 
     @IBOutlet weak var segmentedView: JXSegmentedView!
     var segmentedDataSource: JXSegmentedTitleDataSource!
@@ -25,9 +28,9 @@ class jxSegmentedViewController: AnalyticsViewController {
 
         setupSegmentedView()
         // Do any additional setup after loading the view.
+        
+        print("-------+++++++++++++++\(listId)")
     }
-
-
     //MARK:设置轮播
         func setupSegmentedView()  {
         
@@ -130,23 +133,23 @@ extension jxSegmentedViewController:JXSegmentedViewDelegate,JXSegmentedListConta
 //       print("=====\(index)")
         switch index {
         case 0:
-            //详情
-//            detailsvc.detailsData = videoData
+            //项目简介
+            oneVc.url = listId
             return oneVc
           
         case 1:
-            //相关
+            //工艺流程
 //            Relatedvc.detailsData = videoData
 //            Relatedvc.videodataSource = videoDeatilsData1//
             return Twovc
         case 2:
-                    //相关
+        //历史曲线
         //            Relatedvc.detailsData = videoData
         //            Relatedvc.videodataSource = videoDeatilsData1//
             return Threevc
             
         default:
-            //评论
+            //故障信息
 //            Commentsvc.currentDynamic = videoData
             return fourvc
         }

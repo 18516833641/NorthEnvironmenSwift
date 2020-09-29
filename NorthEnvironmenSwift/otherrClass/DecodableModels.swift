@@ -33,6 +33,17 @@ struct t_success_data<T:Decodable>: Decodable {
 }
 
 
+struct t_success_datadetaile<T:Decodable>: Decodable {
+    // 状态值
+//    var ok:Int? = nil
+    //
+    var message:String? = nil
+    //
+    var respCode:String? = nil
+    // 嵌套模型
+    var data:[t_company_data]? = nil
+}
+
 
 
 

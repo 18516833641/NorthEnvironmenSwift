@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class operatingOneViewController: AnalyticsViewController,JXSegmentedListContainerViewListDelegate {
     
@@ -21,17 +22,10 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        httpService()
     }
-    
-        /// 修改原生tabbar
-        func httpService() -> Void {
-            
-    //       let param = ["username":"" as AnyObject,
-    //
-    //                    "password":"" as AnyObject,]
 
-            //        print("\(param)")
+    func httpService() -> Void {
             
            let token = UserDefaults.string(forKey: .token)
             
@@ -39,24 +33,16 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
                     "X-AUTH-TOKEN" : token!,
                 ]
             
-//            print("======\(BERKKURL.Url_Sever + url)")
-            
-            BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_OperatingList, parameters: nil, headers: headers, successed: { (error, response) in
+            BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_OperatingList + url, parameters: nil, headers: headers, successed: { (error, response) in
                 
                 if error == nil , let data = response{
-                    print("==============\(data))")
-                 let model = data.jsonDataMapModel(t_success_data<t_company_data>.self)
                     
-                    print("==============\(String(describing: model?.data))")
-    //
-                    guard let content:String = model?.data?[0].content! else {
-                        return
-                    }
-    //                self.textView.textColor = .white
-    //                let codeStr =  "https://www.baidu.com/h5/rulesPage/erh5/shareErScore.html?" + "你好"
-                    
-                    self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
-                         
+                let json = JSON(data)
+
+                let content = json["data"]["content"].stringValue
+
+                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
+                     
                 }
                 
             }) { (error, nil) in
@@ -65,6 +51,6 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
                 print("======\(String(describing: error))")
             }
             
-        }
+    }
 
 }
