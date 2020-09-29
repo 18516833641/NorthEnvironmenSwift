@@ -122,12 +122,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
         cell.titleLabel.text = listData.tile
         
 //        print("----------------\(BERKKURL.Url_SeverImage + listData.thmb!)")
+
+        cell.listImage.sd_setImage(with: URL(string:BERKKURL.Url_SeverImage + listData.thmb!), placeholderImage: UIImage(named: "zwsj"), options: .refreshCached, completed: nil)
         
         
-//        let url  = "http://39.101.181.123:8080/bk/upload/files/20200822/20200822155111_1598082729719.png"
-//                   "http://39.101.181.123:8080/bk/upload\files\20200822\20200822155111_1598082729719.png"
-        
-        cell.listImage.sd_setImage(with: URL(string:BERKKURL.Url_SeverImage + listData.thmb!), completed: nil)
         if let imageStr = listData.thmb , let imageUrl:URL = URL(string: BERKKURL.Url_SeverImage + imageStr)  {
 //            print("----------------\(imageUrl)")
 //            cell.listImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: ""), options: .refreshCached, completed: nil)
@@ -160,10 +158,11 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .three://荣誉资质
             
-            let cellData = dataSource[indexPath.row]
+//            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "资质荣誉详情"
-            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
+//            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
+            vc.url = BERKKURL.URL_QualificationList
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -171,10 +170,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .four://主营业务
             
-            let cellData = dataSource[indexPath.row]
+//            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "主营业务详情"
-            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
+            vc.url = BERKKURL.URL_MainList
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -182,10 +181,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .five://主导技术
             
-            let cellData = dataSource[indexPath.row]
+//            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "主导技术详情"
-            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
+            vc.url = BERKKURL.URL_DominantList
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -193,10 +192,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .six://行业应用
             
-            let cellData = dataSource[indexPath.row]
+//            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "行业应用详情"
-            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
+            vc.url = BERKKURL.URL_IndustryList
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -204,11 +203,11 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .seven://工程案例
             
-            let cellData = dataSource[indexPath.row]
+//            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "工程案例详情"
-            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
-//            print("-------\(vc.url)")
+            vc.url = BERKKURL.URL_EngineeringList
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
             break

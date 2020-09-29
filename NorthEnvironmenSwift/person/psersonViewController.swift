@@ -23,7 +23,8 @@ class psersonViewController: AnalyticsViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "baseTableViewCell", bundle: nil), forCellReuseIdentifier: "baseTableViewCell")
-        
+        let userNm = UserDefaults.string(forKey: .userNm)
+        phone_Number.text = userNm
         // Do any additional setup after loading the view.
     }
 

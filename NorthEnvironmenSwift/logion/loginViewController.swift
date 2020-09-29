@@ -39,6 +39,7 @@ class loginViewController: AnalyticsViewController {
                 
                 UserDefaults.set(value: model?.attributes?.token ?? "", forKey: UserDefaults.LoginInfo.token)
                 UserDefaults.set(value: model?.attributes?.userNm ?? "", forKey: UserDefaults.LoginInfo.userNm)
+                UserDefaults.set(value: model?.attributes?.phn ?? "", forKey: UserDefaults.LoginInfo.phn)
 
 //                //登录成功
 //                if result?.code == 1 {
