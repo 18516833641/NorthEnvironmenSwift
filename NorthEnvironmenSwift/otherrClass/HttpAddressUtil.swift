@@ -48,6 +48,9 @@ struct BERKKURL {
     //取得曲线数据
     public static let URL_Curve = "bkGraphController"
     
+    //取得曲线数据
+    public static let URL_GZtingk = "bkAlertController"
+    
     
 
     
