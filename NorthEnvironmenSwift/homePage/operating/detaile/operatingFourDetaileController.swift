@@ -44,7 +44,7 @@ class operatingFourDetaileController: AnalyticsViewController {
                         
                     let json = JSON(data)
                     
-                    print("----\(json["data"])")
+                        print("----\(json["data"])")
                     
 //                        var jsonArr = self.getArrayFromJSONString(jsonString: json["data"])
 //                        
