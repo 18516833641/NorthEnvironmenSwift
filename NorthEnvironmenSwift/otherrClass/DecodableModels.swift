@@ -32,21 +32,6 @@ struct t_success_data<T:Decodable>: Decodable {
     var data:[T]? = nil
 }
 
-
-struct t_success_datadetaile<T:Decodable>: Decodable {
-    // 状态值
-//    var ok:Int? = nil
-    //
-    var message:String? = nil
-    //
-    var respCode:String? = nil
-    // 嵌套模型
-    var data:[t_company_data]? = nil
-}
-
-
-
-
 //公司简介
 struct t_company_data:Decodable {
 
@@ -58,20 +43,14 @@ struct t_company_data:Decodable {
 //     var userinfo:UserInfo_data? = nil//人脸图像
 }
 
+//故障信息
+struct t_fault_data:Decodable {
 
-//struct UserInfo_data : Decodable{
-////    var faceimage:String? = nil//人脸图像
-////    var invitecode:String? = nil//邀请码
-//    var profession:String? = nil//职业
-//    var username:String? = nil//
-//    var score:Int//分数
-//    var gender:Int//性别
-//    var level:Int//登记
-//    var money:String? = nil//金币
-//    var hometown:String? = nil//家乡
-//    var mobile:String? = nil//手机号
-//    var birthday:String? = nil//生日
-//    var nickname:String? = nil//昵称
-//    var school:String? = nil//学校
-//    var token:String? = nil//token
-//}
+     var alertvalue:String? = nil//
+     var create_date:String? = nil//
+     var itemid:String? = nil//
+     var itemnm:String? = nil//
+     var normlvalue:String? = nil//
+     var update_date:String? = nil//
+    
+}

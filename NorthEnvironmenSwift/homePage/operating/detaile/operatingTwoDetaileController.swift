@@ -35,8 +35,6 @@ class operatingTwoDetaileController: AnalyticsViewController {
     
     var titleArr:[String] = []
     
-    var contentArr:[String] = []
-    
     var contentArr1 = ["","","","","","",""]
     var contentArr2 = ["","","",""]
     var contentArr3 = ["","","","","","","","","","","","","","",""]
@@ -108,6 +106,7 @@ class operatingTwoDetaileController: AnalyticsViewController {
               let headers:HTTPHeaders = [
                        "X-AUTH-TOKEN" : token!,
                    ]
+        print("========\(BERKKURL.Url_Sever + BERKKURL.URL_OperatingList + url)")
                BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.Url_Sever + BERKKURL.URL_OperatingList + url, parameters: nil, headers: headers, successed: { (error, response) in
                    
                    if error == nil , let data = response{
@@ -117,7 +116,7 @@ class operatingTwoDetaileController: AnalyticsViewController {
                     print("=====\(json)")
                    
                    //脱硫系统
-                    self.contentArr = [json["data"]["TJRC04_02"].stringValue,
+                    self.contentArr1 = [json["data"]["TJRC04_02"].stringValue,
                                       json["data"]["TJRC04_03"].stringValue,
                                       json["data"]["TJRC04_04"].stringValue,
                                       json["data"]["TJRC04_05"].stringValue,
@@ -127,14 +126,14 @@ class operatingTwoDetaileController: AnalyticsViewController {
                        ]
                        
                    //除尘系统
-                   self.contentArr = [json["data"]["TJRC04_09"].stringValue,
+                   self.contentArr2 = [json["data"]["TJRC04_09"].stringValue,
                                       json["data"]["TJRC04_10"].stringValue,
                                       json["data"]["TJRC04_11"].stringValue,
                                       json["data"]["TJRC04_12"].stringValue,
                        ]
                        
                    //风机系统
-                   self.contentArr = [json["data"]["TJRC04_13"].stringValue,
+                   self.contentArr3 = [json["data"]["TJRC04_13"].stringValue,
                                       json["data"]["TJRC04_14"].stringValue,
                                       json["data"]["TJRC04_15"].stringValue,
                                       json["data"]["TJRC04_16"].stringValue,
@@ -151,31 +150,31 @@ class operatingTwoDetaileController: AnalyticsViewController {
                                       json["data"]["TJRC04_27"].stringValue
                        ]
                    //原料系统
-                  self.contentArr = [json["data"]["TJRC04_28"].stringValue,
+                  self.contentArr4 = [json["data"]["TJRC04_28"].stringValue,
                                       json["data"]["TJRC04_29"].stringValue
                                 
                       ]
                        
                    //副产物系统
-                   self.contentArr = [json["data"]["TJRC04_30"].stringValue,
+                   self.contentArr5 = [json["data"]["TJRC04_30"].stringValue,
                        ]
                    
                    //水系统
-                   self.contentArr = [json["data"]["TJRC04_31"].stringValue,
+                   self.contentArr6 = [json["data"]["TJRC04_31"].stringValue,
                                        json["data"]["TJRC04_32"].stringValue,
                                        json["data"]["TJRC04_33"].stringValue,
                                        json["data"]["TJRC04_34"].stringValue,
                        ]
                    
                    //气系统
-                   self.contentArr = [json["data"]["TJRC04_35"].stringValue,
+                   self.contentArr7 = [json["data"]["TJRC04_35"].stringValue,
                                        json["data"]["TJRC04_36"].stringValue,
                                        json["data"]["TJRC04_37"].stringValue,
                                        json["data"]["TJRC04_38"].stringValue,
                    ]
                    
                    //烟气系统
-                   self.contentArr = [json["data"]["TJRC04_39"].stringValue,
+                   self.contentArr8 = [json["data"]["TJRC04_39"].stringValue,
                                        json["data"]["TJRC04_40"].stringValue,
                                        json["data"]["TJRC04_41"].stringValue,
                                        json["data"]["TJRC04_42"].stringValue,
@@ -187,9 +186,6 @@ class operatingTwoDetaileController: AnalyticsViewController {
                     
 
                    self.tableView.reloadData()
-                        print("-------------------------\(self.contentArr5)")
-   //                let content = json["data"]["content"].stringValue
-   //                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
                         
                    }
                    
@@ -246,7 +242,7 @@ extension operatingTwoDetaileController:UITableViewDelegate,UITableViewDataSourc
         case .five:
             
             cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr[indexPath.row]
+            cell.contenLabel.text = contentArr5[indexPath.row]
             
         case .six:
             
@@ -258,16 +254,11 @@ extension operatingTwoDetaileController:UITableViewDelegate,UITableViewDataSourc
             cell.titleLabel.text = titleArr[indexPath.row]
             cell.contenLabel.text = contentArr7[indexPath.row]
             
-        case .eight:
-            
+        default:
             cell.titleLabel.text = titleArr[indexPath.row]
             cell.contenLabel.text = contentArr8[indexPath.row]
-            
-        default:
-            break
+//            break
         }
-//         cell.titleLabel.text = titleArr[indexPath.row]
-//         cell.contenLabel.text = contentArr[indexPath.row]
       
         return cell
         

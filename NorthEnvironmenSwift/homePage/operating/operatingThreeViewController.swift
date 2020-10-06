@@ -148,9 +148,6 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                     ]
 
                     self.tableView.reloadData()
-//                        print("-------------------------\(self.contentArr)")
-    //                let content = json["data"]["content"].stringValue
-    //                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
                          
                     }
                     
@@ -181,6 +178,11 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         headerView.addSubview(titleLabel)
+        
+        let image = UIImageView.init(frame: CGRect(x: headerView.frame.width - 60, y: 5, width: 40, height: 20))
+        image.backgroundColor = .red
+        headerView.addSubview(image)
+        
         
         return headerView
         

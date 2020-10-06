@@ -14,9 +14,15 @@ class operatingFourDetaileController: AnalyticsViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var nameArr = ["故障中","已解除"]
-    var rightArr = ["2020-06-09","2020-07-09"]
-    var imageArr = ["gzz","yjc"]
+    var projrctStr = ""
+    var typeStr = ""
+    
+    var dataSource:[t_fault_data] = []
+//    var nameArr:[String] = []
+//    var createArr:[String] = []
+//    var updateArr:[String] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,24 +43,25 @@ class operatingFourDetaileController: AnalyticsViewController {
                         "X-AUTH-TOKEN" : token!,
                     ]
         
-        print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/1&0")")
-                BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/1&0", parameters: nil, headers: headers, successed: { (error, response) in
+//        print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")
+                BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr, parameters: nil, headers: headers, successed: { (error, response) in
                     
                     if error == nil , let data = response{
                         
-                    let json = JSON(data)
-                    
-                        print("----\(json["data"])")
-                    
-//                        var jsonArr = self.getArrayFromJSONString(jsonString: json["data"])
-//                        
-//                        print("\(jsonArr)")
+                        let model = data.jsonDataMapModel(t_success_data<t_fault_data>.self)
 
-                        self.tableView.reloadData()
-//                        print("-------------------------\(self.contentArr)")
-    //                let content = json["data"]["content"].stringValue
-    //                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
-                         
+//                        print("==============\(String(describing: model))")
+                        guard let dataList = model?.data,error == nil else {
+
+//                            self.noData.image = UIImage(named: "sever_error")
+//                            self.noData.isHidden = false
+                            return
+                        }
+
+                        for cellData in dataList {
+                           self.dataSource.append(cellData)
+                       }
+                         self.tableView.reloadData()
                     }
                     
                 }) { (error, nil) in
@@ -86,7 +93,7 @@ extension operatingFourDetaileController:UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,10 +103,12 @@ extension operatingFourDetaileController:UITableViewDelegate,UITableViewDataSour
             cells.backgroundColor = .groupTableViewBackground
             return cells
         }
-//        cell.rightLabel.isHidden = false
-//        cell.headIcon.image = UIImage.init(named: imageArr[indexPath.item])
-//        cell.titleLabel.text = nameArr[indexPath.row]
-//        cell.rightLabel.text = rightArr[indexPath.row]
+        let listData = dataSource[indexPath.row]
+        
+        cell.title1.text = "故障区域：" + (listData.itemnm ?? "")
+        cell.title2.text = "故障开始日期：" + (listData.create_date ?? "")
+        cell.title3.text = "故障截止日期：" + (listData.update_date ?? "")
+
         
         
         return cell
