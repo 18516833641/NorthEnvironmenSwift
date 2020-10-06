@@ -39,6 +39,8 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func yanqiAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "烟气系统"
+        vc.type = .one
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -46,6 +48,8 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func yuanliaoAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "原料系统"
+        vc.type = .two
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -53,6 +57,8 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func tuoliuAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "脱硫系统"
+        vc.type = .three
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -60,6 +66,8 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func shuiAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "水系统"
+        vc.type = .four
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -67,6 +75,8 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func chuchengAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "除尘系统"
+        vc.type = .five
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -74,20 +84,26 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     @IBAction func fuchanwuAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "副产物系统"
+        vc.type = .six
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //风机系统
     @IBAction func fengjiAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
-        vc.title = "机系统"
+        vc.title = "风机系统"
+        vc.type = .seven
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    //气系统
+    //projectType
     @IBAction func qiAction(_ sender: Any) {
         let vc = operatingTwoDetaileController()
         vc.title = "气系统"
+        vc.type = .eight
+        vc.url = url
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

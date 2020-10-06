@@ -289,7 +289,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             cell.contenLabel.text = contentArr8[indexPath.row]
             
         default:
-            return cell
+            break
         }
       
         return cell

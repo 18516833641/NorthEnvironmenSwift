@@ -53,7 +53,7 @@ class RootTabBarViewController: UITabBarController {
                 //2.设置子控制器排序
                 childVC.tabBarItem.tag = index
                 //3.设置子控制器未选中状态下的图片
-                childVC.tabBarItem.image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
+                childVC.tabBarItem.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
             
             
                 //4.x设置子控制器选中状态下的图片
@@ -70,8 +70,8 @@ class RootTabBarViewController: UITabBarController {
         func modifyTabbar() -> Void {
             //设置选中字体颜色
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.init(red: 40/255.0, green: 243/255.0, blue: 253/255.0, alpha: 1)], for: UIControl.State.selected)
-    //        //设置未选中状态下字体颜色
-            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.init(red: 19/255.0, green: 134/255.0, blue: 139/255.0, alpha: 1)], for: UIControl.State.normal)
+//    //        //设置未选中状态下字体颜色
+//            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.init(red: 19/255.0, green: 134/255.0, blue: 139/255.0, alpha: 1)], for: UIControl.State.normal)
             
             
             //因为tabbar有默认的渲染色，所以要先去掉，否则颜色并不是想要的颜色

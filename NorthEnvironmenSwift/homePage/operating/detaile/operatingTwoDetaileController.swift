@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class operatingTwoDetaileController: AnalyticsViewController {
 
@@ -14,40 +16,190 @@ class operatingTwoDetaileController: AnalyticsViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //总系统
-    let titleArr = ["脱硫入口烟气O2浓度","脱硫入口烟气SO2浓度","脱硫入口烟气NOX浓度","脱硫入口烟气粉尘含量","脱硫入口烟气流量","脱硫出口烟气SO2浓度","脱硫塔压差","除尘器压差","本小时出口SO2小时均值","上一小时出口SO2小时均值","上一小时入口SO2小时均值"]
     
-    //脱硫系统
-    let titleArr1 = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
+    var type = northType.one
     
-    //除尘系统
-    let titleArr2 = ["除尘器出口温度","除尘器出口压力","1#加湿机压力","2#加湿机压力"]
+    var url = ""
     
-    //风机系统
-    let titleArr3 = ["高压变频器电流反馈","高压变频器频率反馈","高压变频器变频运行指示","高压变频器工频运行指示","高压变频器远程指示","高压变频器系统就绪指示","高压变频器运行指示","高压变频器变频报警","高压变频器变频故障","主引风机轴承温度1","主引风机轴承温度2","主引风机冷却水压力","主引风机风门执行器开度","主引风机电机轴承温度1","主引风机电机轴承温度2"]
     
-    //原料系统
-    let titleArr4 = ["脱硫剂喷射器进口压力","原料仓重量"]
+    enum northType {
+        case one//烟气系统
+        case two//原料系统
+        case three//脱硫系统
+        case four//水系统
+        case five//除尘系统
+        case six//副产物系统
+        case seven//风机系统
+        case eight//气系统
+    }
     
-    //副产物系统
-    let titleArr5 = ["副产物仓重量"]
+    var titleArr:[String] = []
     
-    //水系统
-    let titleArr6 = ["进水流量计","1#加湿机加水流量","2#加湿机加水流量","工艺水箱液位"]
+    var contentArr:[String] = []
     
-    //气系统
-    let titleArr7 = ["储罐氮气主管压力","喷吹主管压力","空气流量计","氮气流量计"]
-    
-    //烟气系统
-    let titleArr8 = ["冷风阀开度反馈","一氧化碳浓度检测1","原烟气挡板门开到位","原烟气挡板门关到位","净烟气挡板门开到位","净烟气挡板门关到位","旁路挡板门开到位","旁路挡板门关到位"]
+    var contentArr1 = ["","","","","","",""]
+    var contentArr2 = ["","","",""]
+    var contentArr3 = ["","","","","","","","","","","","","","",""]
+    var contentArr4 = ["",""]
+    var contentArr5 = [""]
+    var contentArr6 = ["","","",""]
+    var contentArr7 = ["","","",""]
+    var contentArr8 = ["","","","","","","",""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        httpService()
 
-        // Do any additional setup after loading the view.
+        switch type {
+        
+        case .one://烟气系统
+            
+            backImage.image = UIImage.init(named: "YYXM_yqxt")
+            titleArr = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
+        case .two://原料系统
+            
+            backImage.image = UIImage.init(named: "YYXM_ylxt")
+            titleArr = ["脱硫剂喷射器进口压力","原料仓重量"]
+            
+        case .three://脱硫系统
+            
+            backImage.image = UIImage.init(named: "YYXM_tlxt")
+            titleArr = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
+            
+        case .four://水系统
+            
+            backImage.image = UIImage.init(named: "YYXM_sxt")
+            titleArr = ["进水流量计","1#加湿机加水流量","2#加湿机加水流量","工艺水箱液位"]
+            
+        case .five://除尘系统
+            
+            backImage.image = UIImage.init(named: "YYXM_ccxt")
+            titleArr = ["除尘器出口温度","除尘器出口压力","1#加湿机压力","2#加湿机压力"]
+            
+        case .six://副产物系统
+            
+            backImage.image = UIImage.init(named: "YYXM_fcwxt")
+            titleArr = ["副产物仓重量"]
+            
+        case .seven://风机系统
+            
+            backImage.image = UIImage.init(named: "YYXM_fjxt")
+            titleArr = ["高压变频器电流反馈","高压变频器频率反馈","高压变频器变频运行指示","高压变频器工频运行指示","高压变频器远程指示","高压变频器系统就绪指示","高压变频器运行指示","高压变频器变频报警","高压变频器变频故障","主引风机轴承温度1","主引风机轴承温度2","主引风机冷却水压力","主引风机风门执行器开度","主引风机电机轴承温度1","主引风机电机轴承温度2"]
+            
+        default://气系统
+        
+            backImage.image = UIImage.init(named: "YYXM_qxt")
+            titleArr = ["储罐氮气主管压力","喷吹主管压力","空气流量计","氮气流量计"]
+        
+        }
+        
+        
+        
         
         tableView.register(UINib(nibName: "operatingTableViewCell", bundle: nil), forCellReuseIdentifier: "operatingTableViewCell")
     }
+    
+    
+    func httpService() -> Void {
+               
+              let token = UserDefaults.string(forKey: .token)
+               
+              let headers:HTTPHeaders = [
+                       "X-AUTH-TOKEN" : token!,
+                   ]
+               BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.Url_Sever + BERKKURL.URL_OperatingList + url, parameters: nil, headers: headers, successed: { (error, response) in
+                   
+                   if error == nil , let data = response{
+                       
+                   let json = JSON(data)
+                    
+                    print("=====\(json)")
+                   
+                   //脱硫系统
+                    self.contentArr = [json["data"]["TJRC04_02"].stringValue,
+                                      json["data"]["TJRC04_03"].stringValue,
+                                      json["data"]["TJRC04_04"].stringValue,
+                                      json["data"]["TJRC04_05"].stringValue,
+                                      json["data"]["TJRC04_06"].stringValue,
+                                      json["data"]["TJRC04_07"].stringValue,
+                                      json["data"]["TJRC04_08"].stringValue
+                       ]
+                       
+                   //除尘系统
+                   self.contentArr = [json["data"]["TJRC04_09"].stringValue,
+                                      json["data"]["TJRC04_10"].stringValue,
+                                      json["data"]["TJRC04_11"].stringValue,
+                                      json["data"]["TJRC04_12"].stringValue,
+                       ]
+                       
+                   //风机系统
+                   self.contentArr = [json["data"]["TJRC04_13"].stringValue,
+                                      json["data"]["TJRC04_14"].stringValue,
+                                      json["data"]["TJRC04_15"].stringValue,
+                                      json["data"]["TJRC04_16"].stringValue,
+                                      json["data"]["TJRC04_17"].stringValue,
+                                      json["data"]["TJRC04_18"].stringValue,
+                                      json["data"]["TJRC04_19"].stringValue,
+                                      json["data"]["TJRC04_20"].stringValue,
+                                      json["data"]["TJRC04_21"].stringValue,
+                                      json["data"]["TJRC04_22"].stringValue,
+                                      json["data"]["TJRC04_23"].stringValue,
+                                      json["data"]["TJRC04_24"].stringValue,
+                                      json["data"]["TJRC04_25"].stringValue,
+                                      json["data"]["TJRC04_26"].stringValue,
+                                      json["data"]["TJRC04_27"].stringValue
+                       ]
+                   //原料系统
+                  self.contentArr = [json["data"]["TJRC04_28"].stringValue,
+                                      json["data"]["TJRC04_29"].stringValue
+                                
+                      ]
+                       
+                   //副产物系统
+                   self.contentArr = [json["data"]["TJRC04_30"].stringValue,
+                       ]
+                   
+                   //水系统
+                   self.contentArr = [json["data"]["TJRC04_31"].stringValue,
+                                       json["data"]["TJRC04_32"].stringValue,
+                                       json["data"]["TJRC04_33"].stringValue,
+                                       json["data"]["TJRC04_34"].stringValue,
+                       ]
+                   
+                   //气系统
+                   self.contentArr = [json["data"]["TJRC04_35"].stringValue,
+                                       json["data"]["TJRC04_36"].stringValue,
+                                       json["data"]["TJRC04_37"].stringValue,
+                                       json["data"]["TJRC04_38"].stringValue,
+                   ]
+                   
+                   //烟气系统
+                   self.contentArr = [json["data"]["TJRC04_39"].stringValue,
+                                       json["data"]["TJRC04_40"].stringValue,
+                                       json["data"]["TJRC04_41"].stringValue,
+                                       json["data"]["TJRC04_42"].stringValue,
+                                       json["data"]["TJRC04_43"].stringValue,
+                                       json["data"]["TJRC04_44"].stringValue,
+                                       json["data"]["TJRC04_45"].stringValue,
+                                       json["data"]["TJRC04_46"].stringValue,
+                   ]
+                    
+
+                   self.tableView.reloadData()
+                        print("-------------------------\(self.contentArr5)")
+   //                let content = json["data"]["content"].stringValue
+   //                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
+                        
+                   }
+                   
+               }) { (error, nil) in
+                   SVProgressHUD.showError(withStatus: "\(String(describing: error))")
+                   SVProgressHUD.dismiss(withDelay: 1)
+                   print("======\(String(describing: error))")
+               }
+               
+       }
 
 }
 
@@ -60,7 +212,7 @@ extension operatingTwoDetaileController:UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return titleArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,9 +223,51 @@ extension operatingTwoDetaileController:UITableViewDelegate,UITableViewDataSourc
             return cells
         }
         
-         
-         cell.titleLabel.text = titleArr1[indexPath.row]
-         cell.contenLabel.text = titleArr1[indexPath.row]
+        switch type {
+        case .one:
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr1[indexPath.row]
+            
+        case .two:
+            
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr2[indexPath.row]
+            
+        case .three:
+            
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr3[indexPath.row]
+            
+        case .four:
+            
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr4[indexPath.row]
+            
+        case .five:
+            
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr[indexPath.row]
+            
+        case .six:
+            
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr6[indexPath.row]
+            
+        case .seven:
+           
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr7[indexPath.row]
+            
+        case .eight:
+            
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr8[indexPath.row]
+            
+        default:
+            break
+        }
+//         cell.titleLabel.text = titleArr[indexPath.row]
+//         cell.contenLabel.text = contentArr[indexPath.row]
       
         return cell
         
