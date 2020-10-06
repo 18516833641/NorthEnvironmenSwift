@@ -138,8 +138,6 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
 
                     self.tableView.reloadData()
                     print("-------------------------\(self.contentArr)")
-//                let content = json["data"]["content"].stringValue
-//                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
                      
                 }
                 
@@ -185,6 +183,11 @@ extension operatingTwoViewController:UITableViewDelegate,UITableViewDataSource{
         let vc = operatingThreeDetaileController()
         vc.title = "折线图详情页"
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        //总系统
+        let titleArr = ["TJRC04_01","TJRC04_47","TJRC04_48","TJRC04_49","TJRC04_50","TJRC04_51","TJRC04_52","TJRC04_53","TJRC04_54","TJRC04_55","TJRC04_56"]
+        vc.projrctStr = titleArr[indexPath.row]
+
         
     }
    

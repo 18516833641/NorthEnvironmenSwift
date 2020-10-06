@@ -25,7 +25,7 @@
                     <gestureRecognizers/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-zb-lCr">
-                    <rect key="frame" x="0.0" y="368" width="414" height="348"/>
+                    <rect key="frame" x="0.0" y="368" width="414" height="308"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="2Ar-eq-4OU"/>
@@ -136,7 +136,7 @@
                 <constraint firstItem="HSi-OX-Azj" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.1" id="gEN-OK-6ao"/>
                 <constraint firstItem="ckj-zb-lCr" firstAttribute="top" secondItem="af0-Cf-KIx" secondAttribute="bottom" id="hrx-GM-L1j"/>
                 <constraint firstItem="cue-ur-EBR" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.1" id="iHV-Yw-NR4"/>
-                <constraint firstItem="ckj-zb-lCr" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.5" constant="-20" id="j5p-lh-haP"/>
+                <constraint firstItem="ckj-zb-lCr" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.5" constant="-60" id="j5p-lh-haP"/>
                 <constraint firstItem="HSi-OX-Azj" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.6" id="kH7-Vu-MdO"/>
                 <constraint firstItem="vVI-4u-OK9" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="1.2" id="nwa-c3-BZn"/>
                 <constraint firstItem="cue-ur-EBR" firstAttribute="centerY" secondItem="af0-Cf-KIx" secondAttribute="centerY" multiplier="0.8" id="rXt-Ln-7aU"/>

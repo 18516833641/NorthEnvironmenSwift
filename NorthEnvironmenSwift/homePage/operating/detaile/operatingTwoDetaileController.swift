@@ -34,15 +34,7 @@ class operatingTwoDetaileController: AnalyticsViewController {
     }
     
     var titleArr:[String] = []
-    
-    var contentArr1 = ["","","","","","",""]
-    var contentArr2 = ["","","",""]
-    var contentArr3 = ["","","","","","","","","","","","","","",""]
-    var contentArr4 = ["",""]
-    var contentArr5 = [""]
-    var contentArr6 = ["","","",""]
-    var contentArr7 = ["","","",""]
-    var contentArr8 = ["","","","","","","",""]
+    var contentArr:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,77 +106,96 @@ class operatingTwoDetaileController: AnalyticsViewController {
                    let json = JSON(data)
                     
                     print("=====\(json)")
-                   
-                   //脱硫系统
-                    self.contentArr1 = [json["data"]["TJRC04_02"].stringValue,
-                                      json["data"]["TJRC04_03"].stringValue,
-                                      json["data"]["TJRC04_04"].stringValue,
-                                      json["data"]["TJRC04_05"].stringValue,
-                                      json["data"]["TJRC04_06"].stringValue,
-                                      json["data"]["TJRC04_07"].stringValue,
-                                      json["data"]["TJRC04_08"].stringValue
-                       ]
-                       
-                   //除尘系统
-                   self.contentArr2 = [json["data"]["TJRC04_09"].stringValue,
-                                      json["data"]["TJRC04_10"].stringValue,
-                                      json["data"]["TJRC04_11"].stringValue,
-                                      json["data"]["TJRC04_12"].stringValue,
-                       ]
-                       
-                   //风机系统
-                   self.contentArr3 = [json["data"]["TJRC04_13"].stringValue,
-                                      json["data"]["TJRC04_14"].stringValue,
-                                      json["data"]["TJRC04_15"].stringValue,
-                                      json["data"]["TJRC04_16"].stringValue,
-                                      json["data"]["TJRC04_17"].stringValue,
-                                      json["data"]["TJRC04_18"].stringValue,
-                                      json["data"]["TJRC04_19"].stringValue,
-                                      json["data"]["TJRC04_20"].stringValue,
-                                      json["data"]["TJRC04_21"].stringValue,
-                                      json["data"]["TJRC04_22"].stringValue,
-                                      json["data"]["TJRC04_23"].stringValue,
-                                      json["data"]["TJRC04_24"].stringValue,
-                                      json["data"]["TJRC04_25"].stringValue,
-                                      json["data"]["TJRC04_26"].stringValue,
-                                      json["data"]["TJRC04_27"].stringValue
-                       ]
-                   //原料系统
-                  self.contentArr4 = [json["data"]["TJRC04_28"].stringValue,
-                                      json["data"]["TJRC04_29"].stringValue
-                                
-                      ]
-                       
-                   //副产物系统
-                   self.contentArr5 = [json["data"]["TJRC04_30"].stringValue,
-                       ]
-                   
-                   //水系统
-                   self.contentArr6 = [json["data"]["TJRC04_31"].stringValue,
-                                       json["data"]["TJRC04_32"].stringValue,
-                                       json["data"]["TJRC04_33"].stringValue,
-                                       json["data"]["TJRC04_34"].stringValue,
-                       ]
-                   
-                   //气系统
-                   self.contentArr7 = [json["data"]["TJRC04_35"].stringValue,
-                                       json["data"]["TJRC04_36"].stringValue,
-                                       json["data"]["TJRC04_37"].stringValue,
-                                       json["data"]["TJRC04_38"].stringValue,
-                   ]
-                   
-                   //烟气系统
-                   self.contentArr8 = [json["data"]["TJRC04_39"].stringValue,
-                                       json["data"]["TJRC04_40"].stringValue,
-                                       json["data"]["TJRC04_41"].stringValue,
-                                       json["data"]["TJRC04_42"].stringValue,
-                                       json["data"]["TJRC04_43"].stringValue,
-                                       json["data"]["TJRC04_44"].stringValue,
-                                       json["data"]["TJRC04_45"].stringValue,
-                                       json["data"]["TJRC04_46"].stringValue,
-                   ]
+                    switch self.type {
+                    
+                    case .one://烟气系统
+                        
+                        self.contentArr.append(contentsOf:
+                            [json["data"]["TJRC04_39"].stringValue,
+                            json["data"]["TJRC04_40"].stringValue,
+                            json["data"]["TJRC04_41"].stringValue,
+                            json["data"]["TJRC04_42"].stringValue,
+                            json["data"]["TJRC04_43"].stringValue,
+                            json["data"]["TJRC04_44"].stringValue,
+                            json["data"]["TJRC04_45"].stringValue,
+                            json["data"]["TJRC04_46"].stringValue,
+                            ])
+                        
+                    case .two://原料系统
+                        
+                        self.contentArr.append(contentsOf:
+                            [json["data"]["TJRC04_28"].stringValue,
+                            json["data"]["TJRC04_29"].stringValue
+                            ])
+                        
+                    case .three://脱硫系统
+                        
+                       self.contentArr.append(contentsOf:
+                           [json["data"]["TJRC04_02"].stringValue,
+                           json["data"]["TJRC04_03"].stringValue,
+                           json["data"]["TJRC04_04"].stringValue,
+                           json["data"]["TJRC04_05"].stringValue,
+                           json["data"]["TJRC04_06"].stringValue,
+                           json["data"]["TJRC04_07"].stringValue,
+                           json["data"]["TJRC04_08"].stringValue])
+                        
+                    case .four://水系统
+                        
+                        self.contentArr.append(contentsOf:
+                            [json["data"]["TJRC04_31"].stringValue,
+                            json["data"]["TJRC04_32"].stringValue,
+                            json["data"]["TJRC04_33"].stringValue,
+                            json["data"]["TJRC04_34"].stringValue,
+                            ])
+                        
+                    case .five://除尘系统
+                        
+                        self.contentArr.append(contentsOf:
+                            [json["data"]["TJRC04_09"].stringValue,
+                            json["data"]["TJRC04_10"].stringValue,
+                            json["data"]["TJRC04_11"].stringValue,
+                            json["data"]["TJRC04_12"].stringValue,
+                            ])
+                        
+                    case .six://副产物系统
+                        
+                        self.contentArr.append(contentsOf:
+                            [json["data"]["TJRC04_30"].stringValue,
+                            ])
+                        
+                    case .seven://风机系统
+                        
+                       self.contentArr.append(contentsOf:
+                           [json["data"]["TJRC04_13"].stringValue,
+                           json["data"]["TJRC04_14"].stringValue,
+                           json["data"]["TJRC04_15"].stringValue,
+                           json["data"]["TJRC04_16"].stringValue,
+                           json["data"]["TJRC04_17"].stringValue,
+                           json["data"]["TJRC04_18"].stringValue,
+                           json["data"]["TJRC04_19"].stringValue,
+                           json["data"]["TJRC04_20"].stringValue,
+                           json["data"]["TJRC04_21"].stringValue,
+                           json["data"]["TJRC04_22"].stringValue,
+                           json["data"]["TJRC04_23"].stringValue,
+                           json["data"]["TJRC04_24"].stringValue,
+                           json["data"]["TJRC04_25"].stringValue,
+                           json["data"]["TJRC04_26"].stringValue,
+                           json["data"]["TJRC04_27"].stringValue
+                           ])
+                        
+                    default://气系统
+                    
+                        self.contentArr.append(contentsOf:
+                            [json["data"]["TJRC04_35"].stringValue,
+                            json["data"]["TJRC04_36"].stringValue,
+                            json["data"]["TJRC04_37"].stringValue,
+                            json["data"]["TJRC04_38"].stringValue,
+                            ])
+                    
+                    }
                     
 
+                   print("======\(self.contentArr)")
                    self.tableView.reloadData()
                         
                    }
@@ -219,47 +230,52 @@ extension operatingTwoDetaileController:UITableViewDelegate,UITableViewDataSourc
             return cells
         }
         
-        switch type {
-        case .one:
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr1[indexPath.row]
-            
-        case .two:
-            
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr2[indexPath.row]
-            
-        case .three:
-            
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr3[indexPath.row]
-            
-        case .four:
-            
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr4[indexPath.row]
-            
-        case .five:
-            
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr5[indexPath.row]
-            
-        case .six:
-            
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr6[indexPath.row]
-            
-        case .seven:
-           
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr7[indexPath.row]
-            
-        default:
-            cell.titleLabel.text = titleArr[indexPath.row]
-            cell.contenLabel.text = contentArr8[indexPath.row]
-//            break
+        
+        if contentArr.count > 0 {
+            switch type {
+                    case .one:
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    case .two:
+                        
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    case .three:
+                        
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    case .four:
+                        
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    case .five:
+                        
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    case .six:
+                        
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    case .seven:
+                       
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+                        
+                    default:
+                        cell.titleLabel.text = titleArr[indexPath.row]
+                        cell.contenLabel.text = contentArr[indexPath.row]
+            //            break
+                    }
+                  
         }
-      
+        
+        
         return cell
         
     }

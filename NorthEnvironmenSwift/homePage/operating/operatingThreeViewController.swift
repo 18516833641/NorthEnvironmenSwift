@@ -174,17 +174,73 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         
         let titleLabel = UILabel.init(frame: CGRect(x: 20, y: 5, width: self.view.bounds.width, height: 20))
         titleLabel.text = headerArr[section]
-        titleLabel.textColor = .lightGray
+        titleLabel.textColor = UIColor(red: 56/255.0, green: 167/255.0, blue: 184/255.0, alpha: 1)
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         headerView.addSubview(titleLabel)
         
-        let image = UIImageView.init(frame: CGRect(x: headerView.frame.width - 60, y: 5, width: 40, height: 20))
-        image.backgroundColor = .red
-        headerView.addSubview(image)
-        
+        let imageBut = UIButton.init(frame: CGRect(x: headerView.frame.width - 100, y: 5, width: 80, height: 20))
+        imageBut.addTarget(self, action: #selector(buttonAction(select:)), for: .touchUpInside)
+        imageBut.tag = section
+        imageBut.setBackgroundImage(UIImage(named: "button_03"), for: .normal)
+        headerView.addSubview(imageBut)
         
         return headerView
+        
+    }
+    
+    @objc func buttonAction(select:UIButton) {
+        
+        print(select.tag)
+        let vc = operatingFiveDetaileController()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        switch select.tag {
+        case 0:
+            vc.title = "脱硫系统"
+            vc.titleArr = self.titleArr1
+            vc.contentArr = self.contentArr1
+            
+        case 1:
+            vc.title = "除尘系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        case 2:
+            vc.title = "风机系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        case 3:
+            vc.title = "原料系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        case 4:
+            vc.title = "副产物系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        case 5:
+            vc.title = "水系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        case 6:
+            vc.title = "气系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        case 7:
+            vc.title = "烟气系统"
+            vc.titleArr = self.titleArr2
+            vc.contentArr = self.contentArr2
+            
+        default:
+            break
+        }
         
     }
     
@@ -300,9 +356,63 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let vc = operatingThreeDetaileController()
         vc.title = "折线图详情页"
+        vc.projrctStr = ""
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        switch indexPath.section {
+        case 0:
+            //脱硫系统
+            let titleArr = ["TJRC04_02","TJRC04_03","TJRC04_04","TJRC04_05","TJRC04_06","TJRC04_07","TJRC04_08"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+
+        case 1:
+            //除尘系统
+            let titleArr = ["TJRC04_09","TJRC04_10","TJRC04_11","TJRC04_12"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        case 2:
+            //风机系统
+            let titleArr = ["TJRC04_13","TJRC04_14","TJRC04_15","TJRC04_16","TJRC04_17","TJRC04_18","TJRC04_19","TJRC04_20","TJRC04_21","TJRC04_22","TJRC04_23","TJRC04_24","TJRC04_25","TJRC04_26","TJRC04_27"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        case 3:
+            //原料系统
+            let titleArr = ["TJRC04_28","TJRC04_29"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        case 4:
+
+            //副产物系统
+            let titleArr = ["TJRC04_30"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        case 5:
+
+            //水系统
+            let titleArr = ["TJRC04_31","TJRC04_32","TJRC04_33","TJRC04_34"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        case 6:
+
+            //气系统
+            let titleArr = ["TJRC04_35","TJRC04_36","TJRC04_37","TJRC04_38"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        case 7:
+
+            //烟气系统
+            let titleArr = ["TJRC04_39","TJRC04_40","TJRC04_41","TJRC04_42","TJRC04_43","TJRC04_44","TJRC04_45","TJRC04_46"]
+            vc.projrctStr = titleArr[indexPath.row]
+
+        default:
+            break
+        }
+        
+       
     }
    
 }

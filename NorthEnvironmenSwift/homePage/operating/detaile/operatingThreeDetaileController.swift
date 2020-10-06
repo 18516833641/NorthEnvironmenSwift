@@ -8,6 +8,8 @@
 
 import UIKit
 import Charts
+import Alamofire
+import SwiftyJSON
 
 class operatingThreeDetaileController: AnalyticsViewController {
     
@@ -16,11 +18,16 @@ class operatingThreeDetaileController: AnalyticsViewController {
     
     @IBOutlet weak var ChartView: LineChartView!
     
+    var projrctStr = ""
+    var typeStr = "0"
+    
     var xStr = ["1", "2", "3", "4","5","6","7","8","9"] //x轴类别项
     var values = [98.0, 70.3, 40.1, 18.2, 40.2, 20.1, 30, 50, 120] //x轴对应的y轴数据
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        httpService()
         
         ChartView.delegate = self
         
@@ -125,6 +132,47 @@ class operatingThreeDetaileController: AnalyticsViewController {
     @IBAction func listAction(_ sender: Any) {
         
     }
+    
+    
+    
+     func httpService() -> Void {
+                    
+                   let token = UserDefaults.string(forKey: .token)
+                    
+                   let headers:HTTPHeaders = [
+                            "X-AUTH-TOKEN" : token!,
+                        ]
+            
+            print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")
+                    BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_Curve + "/" + projrctStr + "&" + typeStr, parameters: nil, headers: headers, successed: { (error, response) in
+                        
+                        if error == nil , let data = response{
+                            
+                            
+                            print("\(JSON(data))")
+//                            let model = data.jsonDataMapModel(t_success_data<t_fault_data>.self)
+//
+//    //                        print("==============\(String(describing: model))")
+//                            guard let dataList = model?.data,error == nil else {
+//
+//    //                            self.noData.image = UIImage(named: "sever_error")
+//    //                            self.noData.isHidden = false
+//                                return
+//                            }
+
+//                            for cellData in dataList {
+//                               self.dataSource.append(cellData)
+//                           }
+//                             self.tableView.reloadData()
+                        }
+                        
+                    }) { (error, nil) in
+                        SVProgressHUD.showError(withStatus: "\(String(describing: error))")
+                        SVProgressHUD.dismiss(withDelay: 1)
+                        print("======\(String(describing: error))")
+                    }
+                    
+            }
 }
 
 
