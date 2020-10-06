@@ -131,6 +131,11 @@ class operatingThreeDetaileController: AnalyticsViewController {
     
     @IBAction func listAction(_ sender: Any) {
         
+        let vc = operatingSixDetaileController()
+        vc.title = "数据记录表"
+//        vc.projrctStr = ""
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
@@ -143,13 +148,20 @@ class operatingThreeDetaileController: AnalyticsViewController {
                             "X-AUTH-TOKEN" : token!,
                         ]
             
-            print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")
+                    print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")
                     BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_Curve + "/" + projrctStr + "&" + typeStr, parameters: nil, headers: headers, successed: { (error, response) in
                         
                         if error == nil , let data = response{
                             
                             
                             print("\(JSON(data))")
+                            let json = JSON(data)
+
+                            self.xStr = [json["data"]["dt"].stringValue]
+                            self.values = [json["data"]["tjrc"].doubleValue]
+                            
+                            print("-----\(self.xStr )")
+                            print("------\(self.values )")
 //                            let model = data.jsonDataMapModel(t_success_data<t_fault_data>.self)
 //
 //    //                        print("==============\(String(describing: model))")

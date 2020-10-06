@@ -12,6 +12,8 @@ import UIKit
 class jxSegmentedViewController: AnalyticsViewController {
     
     var listId = ""
+    var project = ""
+    
     
 
     @IBOutlet weak var segmentedView: JXSegmentedView!
@@ -141,19 +143,19 @@ extension jxSegmentedViewController:JXSegmentedViewDelegate,JXSegmentedListConta
             //工艺流程
 //            Relatedvc.detailsData = videoData
 //            Relatedvc.videodataSource = videoDeatilsData1//
-            Twovc.url = "?itmeid=1"
+            Twovc.url = project
             return Twovc
         case 2:
         //历史曲线
         //            Relatedvc.detailsData = videoData
         //            Relatedvc.videodataSource = videoDeatilsData1//
-            Threevc.url = "?itmeid=1"
+            Threevc.url = project
             return Threevc
             
         default:
             //故障信息
 //            Commentsvc.currentDynamic = videoData
-            fourvc.url = "?itmeid=1"
+            fourvc.url = project
             return fourvc
         }
         

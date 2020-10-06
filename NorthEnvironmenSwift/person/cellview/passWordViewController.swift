@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class passWordViewController: AnalyticsViewController {
 
@@ -16,14 +18,84 @@ class passWordViewController: AnalyticsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
 
     @IBAction func contenAction(_ sender: Any) {
+
+        
+        if oldPassWord.text!.isEmpty {
+
+            SVProgressHUD.showError(withStatus: "请输入旧密码")
+            SVProgressHUD.dismiss(withDelay: 0.75)
+            return
+        }
+
+        if newPassWord.text!.isEmpty {
+
+            SVProgressHUD.showError(withStatus: "请输入新密码")
+            SVProgressHUD.dismiss(withDelay: 0.75)
+            return
+        }
+
+        if nextPassWord.text!.isEmpty {
+
+            SVProgressHUD.showError(withStatus: "请再次输入新密码")
+            SVProgressHUD.dismiss(withDelay: 0.75)
+            return
+        }
+
+
+        if newPassWord.text != nextPassWord.text {
+            SVProgressHUD.showError(withStatus: "两次密码输入不一致")
+            SVProgressHUD.dismiss(withDelay: 0.75)
+            return
+        }
+        
+         httpService()
         
     }
  
+    func httpService() {
+                    
+            let token = UserDefaults.string(forKey: .token)
+
+            guard let userid = UserDefaults.string(forKey: .id),userid.count > 1  else {
+                
+                return
+            }
+
+            guard let pass = nextPassWord.text,pass.count > 1  else {
+            
+                return
+            }
+
+
+            let headers:HTTPHeaders = [
+                     "X-AUTH-TOKEN" : token!,
+                 ]
+
+    
+            print("======\(BERKKURL.URL_PassWord + "userid=" + userid + "&password=" + pass)")
+            BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.URL_PassWord + "userid=" + userid + "&password=" + pass, parameters: nil, headers: headers, successed: { (error , response) in
+
+                if error == nil , let data = response{
+
+                    print("====\(JSON(data))")
+
+
+
+                }
+
+
+
+            }) { (error, nil) in
+
+                SVProgressHUD.showError(withStatus: "\(String(describing: error))")
+                SVProgressHUD.dismiss(withDelay: 1.75)
+                print("======\(String(describing: error))")
+            }
+        }
 
 }

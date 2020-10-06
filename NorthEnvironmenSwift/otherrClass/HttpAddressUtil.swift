@@ -19,10 +19,10 @@ struct BERKKURL {
     public static let Url_SeverImage = "http://39.101.181.123:8080/bk/"
     
     //验证用户密码
-    public static let URL_Login = BERKKURL.Url_Sever + "bkUserController?username=inter&password=123456"
+    public static let URL_Login = BERKKURL.Url_Sever + "bkUserController?username="
     
     //修改密码
-    public static let URL_PassWord = BERKKURL.Url_Sever + "bkUserController?userid=402881fc60a1cbe40160a1f080620011&password=123456&newpassword=123456"
+    public static let URL_PassWord = BERKKURL.Url_Sever + "bkUserController?"
     
     //公司简介列表
     public static let URL_CompanyList = "bkComdecripController"

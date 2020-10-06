@@ -148,6 +148,12 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             vc.title = "运营项目详情"
             vc.listId = "/" + cellData.id!
             
+            if indexPath.row == 1 {
+                vc.project = "?itmeid=1"
+            }else{
+                vc.project = "?itmeid=2"
+            }
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
             break
