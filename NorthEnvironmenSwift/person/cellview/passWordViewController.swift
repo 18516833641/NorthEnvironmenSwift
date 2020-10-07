@@ -19,6 +19,15 @@ class passWordViewController: AnalyticsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.oldPassWord.attributedPlaceholder = NSAttributedString.init(string:"请输入旧密码", attributes: [
+        NSAttributedString.Key.foregroundColor:UIColor.white])
+        
+        self.newPassWord.attributedPlaceholder = NSAttributedString.init(string:"请输入新密码", attributes: [
+        NSAttributedString.Key.foregroundColor:UIColor.white])
+        
+        self.nextPassWord.attributedPlaceholder = NSAttributedString.init(string:"请再次输入新密码", attributes: [
+        NSAttributedString.Key.foregroundColor:UIColor.white])
+        
     }
 
 

@@ -19,6 +19,12 @@ class loginViewController: AnalyticsViewController {
         super.viewDidLoad()
 
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        self.userText.attributedPlaceholder = NSAttributedString.init(string:"请输入用户名", attributes: [
+            NSAttributedString.Key.foregroundColor:UIColor.white])
+        
+        self.userPassText.attributedPlaceholder = NSAttributedString.init(string:"请输入用户密码", attributes: [
+        NSAttributedString.Key.foregroundColor:UIColor.white])
     }
 
     @IBAction func loginAction(_ sender: Any) {
