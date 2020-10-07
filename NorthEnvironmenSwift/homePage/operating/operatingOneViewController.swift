@@ -41,7 +41,7 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
 
                 let content = json["data"]["content"].stringValue
 
-                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
+                self.textView.attributedText = content.htmlToAttributedString
                      
                 }
                 

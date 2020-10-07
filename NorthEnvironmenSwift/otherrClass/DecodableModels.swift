@@ -54,3 +54,11 @@ struct t_fault_data:Decodable {
      var update_date:String? = nil//
     
 }
+
+//曲线数据
+struct t_qx_data:Decodable {
+
+     var dt:String? = nil//
+     var tjrc:String? = nil//
+    
+}

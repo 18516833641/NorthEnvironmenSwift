@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="operatingThreeDetaileController" customModule="NorthEnvironmenSwift" customModuleProvider="target">
             <connections>
                 <outlet property="ChartView" destination="frD-Oq-gEF" id="Q2R-SU-a8N"/>
+                <outlet property="timeButton" destination="IZH-Bz-I3L" id="2pJ-dx-bz6"/>
+                <outlet property="timeView" destination="TAA-Vk-ROe" id="sCD-Yq-BYR"/>
                 <outlet property="titleLabel" destination="FTz-WE-tPm" id="pCn-U3-H3l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,7 +29,9 @@
                         <constraint firstAttribute="width" constant="60" id="8cU-iU-Yat"/>
                         <constraint firstAttribute="height" constant="30" id="gfQ-AE-u4E"/>
                     </constraints>
-                    <state key="normal" title="日"/>
+                    <state key="normal" title="日">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="15"/>
@@ -39,7 +43,7 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frD-Oq-gEF" customClass="LineChartView" customModule="Charts">
                     <rect key="frame" x="0.0" y="124" width="414" height="327"/>
-                    <color key="backgroundColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDR-IU-I2i">
                     <rect key="frame" x="20" y="772" width="374" height="40"/>
@@ -60,14 +64,66 @@
                     <color key="textColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAA-Vk-ROe">
+                    <rect key="frame" x="334" y="64" width="59" height="100"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pLf-gE-LaA">
+                            <rect key="frame" x="0.0" y="5" width="59" height="90"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPL-fB-cvB">
+                                    <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="日">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="dayAction:" destination="-1" eventType="touchUpInside" id="LMj-U0-GAg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z63-Fh-Yq3">
+                                    <rect key="frame" x="0.0" y="30" width="59" height="30"/>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="周">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="weekAction:" destination="-1" eventType="touchUpInside" id="8GI-cG-pem"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48p-ca-xSx">
+                                    <rect key="frame" x="0.0" y="60" width="59" height="30"/>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="月">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="monthAction:" destination="-1" eventType="touchUpInside" id="oc4-e6-UWc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="E7z-9S-8Yb"/>
+                        <constraint firstItem="pLf-gE-LaA" firstAttribute="centerY" secondItem="TAA-Vk-ROe" secondAttribute="centerY" id="H2t-lm-fok"/>
+                        <constraint firstItem="48p-ca-xSx" firstAttribute="width" secondItem="TAA-Vk-ROe" secondAttribute="width" id="Jy7-cs-LDW"/>
+                        <constraint firstItem="Z63-Fh-Yq3" firstAttribute="width" secondItem="TAA-Vk-ROe" secondAttribute="width" id="anD-9K-n5Q"/>
+                        <constraint firstItem="uPL-fB-cvB" firstAttribute="width" secondItem="TAA-Vk-ROe" secondAttribute="width" id="d8p-Hw-90H"/>
+                        <constraint firstItem="pLf-gE-LaA" firstAttribute="centerX" secondItem="TAA-Vk-ROe" secondAttribute="centerX" id="w9l-n9-avo"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="frD-Oq-gEF" firstAttribute="top" secondItem="IZH-Bz-I3L" secondAttribute="bottom" constant="30" id="AgJ-Kh-8d7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TAA-Vk-ROe" secondAttribute="trailing" constant="21" id="Di0-xC-td6"/>
                 <constraint firstItem="IZH-Bz-I3L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="FY3-J2-Yn1"/>
                 <constraint firstItem="frD-Oq-gEF" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="GYG-Qc-DgD"/>
+                <constraint firstItem="TAA-Vk-ROe" firstAttribute="width" secondItem="IZH-Bz-I3L" secondAttribute="width" multiplier="0.983333" id="Ivf-fa-aOn"/>
                 <constraint firstItem="frD-Oq-gEF" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.4" id="KnD-HE-arC"/>
                 <constraint firstItem="FTz-WE-tPm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="N3J-gd-bOr"/>
+                <constraint firstItem="TAA-Vk-ROe" firstAttribute="top" secondItem="IZH-Bz-I3L" secondAttribute="bottom" constant="-30" id="SCU-bz-sKE"/>
                 <constraint firstItem="UDR-IU-I2i" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" constant="-40" id="Xg1-Fw-6xK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UDR-IU-I2i" secondAttribute="bottom" constant="50" id="Xna-ta-fJA"/>
                 <constraint firstItem="UDR-IU-I2i" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Yx3-zF-q9d"/>
@@ -76,7 +132,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IZH-Bz-I3L" secondAttribute="trailing" constant="20" id="tk7-RI-IPl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="137"/>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
         </view>
     </objects>
     <resources>

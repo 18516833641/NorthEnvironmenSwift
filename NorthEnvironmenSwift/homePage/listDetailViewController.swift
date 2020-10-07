@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class listDetailViewController: AnalyticsViewController {
     
@@ -45,18 +46,12 @@ class listDetailViewController: AnalyticsViewController {
         BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + url, parameters: nil, headers: headers, successed: { (error, response) in
             
             if error == nil , let data = response{
-                print("==============\(data))")
-             let model = data.jsonDataMapModel(t_success_data<t_company_data>.self)
                 
-                print("==============\(String(describing: model?.data))")
-//
-                guard let content:String = model?.data?[0].content! else {
-                    return
-                }
-//                self.textView.textColor = .white
-//                let codeStr =  "https://www.baidu.com/h5/rulesPage/erh5/shareErScore.html?" + "你好"
+                let json = JSON(data)
                 
-                self.textView.attributedText = NSMutableAttributedString(string: (content.htmlToString))
+                let content = json["data"][0]["content"].stringValue
+                
+                self.textView.attributedText = content.htmlToAttributedString
                      
             }
             

@@ -18,14 +18,21 @@ class operatingThreeDetaileController: AnalyticsViewController {
     
     @IBOutlet weak var ChartView: LineChartView!
     
+    @IBOutlet weak var timeView: UIView!
+    
+    @IBOutlet weak var timeButton: UIButton!
+    
+    var isSelect = true
+    
+    
     var projrctStr = ""
     var typeStr = "0"
     
     var pushUrl = ""
     
     
-    var xStr = ["1", "2", "3", "4","5","6","7","8","9"] //x轴类别项
-    var values = [98.0, 70.3, 40.1, 18.2, 40.2, 20.1, 30, 50, 120] //x轴对应的y轴数据
+    var xStr:[String] = [] //x轴类别项
+    var values:[Double] = [] //x轴对应的y轴数据
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +58,17 @@ class operatingThreeDetaileController: AnalyticsViewController {
         ChartView.leftAxis.labelTextColor = UIColor(red: 40/255.0, green: 243/255.0, blue: 253/255.0, alpha: 1)
         
         setLineChartViewData(xStr, values)
+        
+        
+        let maskPath = UIBezierPath(roundedRect: timeView.bounds,byRoundingCorners:[.topLeft,.topRight,.bottomLeft,.bottomRight],cornerRadii: CGSize(width: 15,height: 15))
+
+        let maskLayer = CAShapeLayer()
+
+        maskLayer.frame = timeView.bounds
+
+        maskLayer.path = maskPath.cgPath
+
+        timeView.layer.mask = maskLayer
         
     }
     
@@ -91,43 +109,53 @@ class operatingThreeDetaileController: AnalyticsViewController {
            
            self.ChartView.animate(xAxisDuration: 1)
        }
-
+    
+    //日
+    @IBAction func dayAction(_ sender: Any) {
+        
+        xStr.removeAll()
+        values.removeAll()
+        typeStr = "0"
+        httpService()
+        isSelect = false
+        timeView.isHidden = true
+        timeButton.setTitle("日", for: .normal)
+    }
+    
+    //周
+    @IBAction func weekAction(_ sender: Any) {
+        
+        xStr.removeAll()
+        values.removeAll()
+        typeStr = "1"
+        httpService()
+        isSelect = false
+        timeView.isHidden = true
+        timeButton.setTitle("周", for: .normal)
+    }
+    
+    //月
+    @IBAction func monthAction(_ sender: Any) {
+        
+        xStr.removeAll()
+        values.removeAll()
+        typeStr = "2"
+        httpService()
+        isSelect = false
+        timeView.isHidden = true
+        timeButton.setTitle("月", for: .normal)
+    }
+    
+    //弹框按钮
     @IBAction func timeAction(_ sender: Any) {
+
+        isSelect = !isSelect
         
-        Dialog()
-        
-        .wTypeSet()(DialogTypePop)
-        //弹出动画
-        .wShowAnimationSet()(AninatonZoomIn)
-            
-        //消失动画
-        .wHideAnimationSet()(AninatonZoomOut)
-            
-        //全部圆角 用法和系统的UIRectCorner相同
-        .wPopViewRectCornerSet()(DialogRectCorner.allCorners)
-            
-        //弹出位置
-        .wDirectionSet()(DiaDirection.directionDowm)
-            
-        //数据
-        .wDataSet()([
-            ["name":"日"],
-            ["name":"周"],
-            ["name":"月"],
-                     ])
-        
-            
-        .wEventFinishSet()(){ anyId, path,type  in
-         
-            self.xStr = []
-            self.values = [0.0]
-            self.setLineChartViewData(self.xStr, self.values)
+        if isSelect {
+            timeView.isHidden = true
+        }else{
+            timeView.isHidden = false
         }
-        
-            
-        .wTapViewSet()(sender as! UIView)
-        .wStart()
-        
         
         
     }
@@ -158,27 +186,20 @@ class operatingThreeDetaileController: AnalyticsViewController {
                             
                             
                             print("\(JSON(data))")
-                            let json = JSON(data)
-
-                            self.xStr = [json["data"]["dt"].stringValue]
-                            self.values = [json["data"]["tjrc"].doubleValue]
+                       
+                            let model = data.jsonDataMapModel(t_success_data<t_qx_data>.self)
                             
-                            print("-----\(self.xStr )")
-                            print("------\(self.values )")
-//                            let model = data.jsonDataMapModel(t_success_data<t_fault_data>.self)
-//
-//    //                        print("==============\(String(describing: model))")
-//                            guard let dataList = model?.data,error == nil else {
-//
-//    //                            self.noData.image = UIImage(named: "sever_error")
-//    //                            self.noData.isHidden = false
-//                                return
-//                            }
+                            guard let dataList = model?.data,error == nil else {
+                                return
+                            }
 
-//                            for cellData in dataList {
-//                               self.dataSource.append(cellData)
-//                           }
-//                             self.tableView.reloadData()
+                            for cellData in dataList {
+                                self.xStr.append(cellData.dt ?? "")
+                                self.values.append(Double(cellData.tjrc ?? "")!)
+                            }
+                            
+                            self.setLineChartViewData(self.xStr, self.values)
+
                         }
                         
                     }) { (error, nil) in
