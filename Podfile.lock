@@ -10,7 +10,10 @@ PODS:
   - SDWebImage/Core (5.8.4)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
-  - WMZDialog (1.1.5)
+  - UMCCommon (7.1.3)
+  - UMCPush (3.2.5):
+    - UMCCommon
+  - UMCSecurityPlugins (1.0.6)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -20,7 +23,9 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SVProgressHUD (~> 2.2.5)
   - SwiftyJSON (~> 5.0.0)
-  - WMZDialog (~> 1.1.5)
+  - UMCCommon
+  - UMCPush
+  - UMCSecurityPlugins
 
 SPEC REPOS:
   trunk:
@@ -31,7 +36,9 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - SwiftyJSON
-    - WMZDialog
+    - UMCCommon
+    - UMCPush
+    - UMCSecurityPlugins
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -41,8 +48,10 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  WMZDialog: 582ebc04124a5366f27ad8f2c6a32254b9c697d0
+  UMCCommon: 0cb2629b93884531621100ed66ff2bca8b181f1f
+  UMCPush: 078b5818e0e47c4cf8ab42a5a30e8b54a0854077
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
 
-PODFILE CHECKSUM: 86efe1fe29ef4cf3c1b70d32a66bf5799b19b084
+PODFILE CHECKSUM: 14512afb55691abe668145c34cf1853c60ed61af
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

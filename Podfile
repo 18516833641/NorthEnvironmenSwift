@@ -10,7 +10,9 @@ pod 'SDWebImage', '~> 5.0'
 pod 'MJRefresh','~> 3.2.0'
 pod 'IQKeyboardManager', '~> 6.4.0'
 pod 'Charts', '~> 3.5.0'
-pod 'WMZDialog', '~> 1.1.5'
+pod 'UMCCommon'
+pod 'UMCPush'
+pod 'UMCSecurityPlugins'
 
 
 use_frameworks!

@@ -28,6 +28,12 @@
 		0445560425110A540014CB22 /* userinfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445560225110A540014CB22 /* userinfoViewController.xib */; };
 		0445560725110A680014CB22 /* passWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445560525110A680014CB22 /* passWordViewController.swift */; };
 		0445560825110A680014CB22 /* passWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0445560625110A680014CB22 /* passWordViewController.xib */; };
+		0452999F252443C0006E0ED9 /* operatingFourDetaileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452999D252443C0006E0ED9 /* operatingFourDetaileTableViewCell.swift */; };
+		045299A0252443C0006E0ED9 /* operatingFourDetaileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0452999E252443C0006E0ED9 /* operatingFourDetaileTableViewCell.xib */; };
+		0460C014252C5248009FED91 /* operatingFiveDetaileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460C012252C5248009FED91 /* operatingFiveDetaileController.swift */; };
+		0460C015252C5248009FED91 /* operatingFiveDetaileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460C013252C5248009FED91 /* operatingFiveDetaileController.xib */; };
+		0460C018252CDD28009FED91 /* operatingSixDetaileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460C016252CDD28009FED91 /* operatingSixDetaileController.swift */; };
+		0460C019252CDD28009FED91 /* operatingSixDetaileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460C017252CDD28009FED91 /* operatingSixDetaileController.xib */; };
 		0468C97E24EBBE15005093A7 /* HttpAddressUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468C97D24EBBE15005093A7 /* HttpAddressUtil.swift */; };
 		0470A7A824F0AFB4000529C6 /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470A7A624F0AFB4000529C6 /* listViewController.swift */; };
 		0470A7A924F0AFB4000529C6 /* listViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0470A7A724F0AFB4000529C6 /* listViewController.xib */; };
@@ -109,6 +115,7 @@
 		04F04B4324EA6B27009CA668 /* RootTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F04B4124EA6B27009CA668 /* RootTabBarViewController.xib */; };
 		04F04B4624EA6B47009CA668 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F04B4424EA6B47009CA668 /* RootNavigationViewController.swift */; };
 		04F04B4724EA6B47009CA668 /* RootNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F04B4524EA6B47009CA668 /* RootNavigationViewController.xib */; };
+		04F1A3F8252E3C9400BF3324 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F1A3F7252E3C9400BF3324 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -147,6 +154,12 @@
 		0445560225110A540014CB22 /* userinfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = userinfoViewController.xib; sourceTree = "<group>"; };
 		0445560525110A680014CB22 /* passWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passWordViewController.swift; sourceTree = "<group>"; };
 		0445560625110A680014CB22 /* passWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = passWordViewController.xib; sourceTree = "<group>"; };
+		0452999D252443C0006E0ED9 /* operatingFourDetaileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operatingFourDetaileTableViewCell.swift; sourceTree = "<group>"; };
+		0452999E252443C0006E0ED9 /* operatingFourDetaileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = operatingFourDetaileTableViewCell.xib; sourceTree = "<group>"; };
+		0460C012252C5248009FED91 /* operatingFiveDetaileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operatingFiveDetaileController.swift; sourceTree = "<group>"; };
+		0460C013252C5248009FED91 /* operatingFiveDetaileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = operatingFiveDetaileController.xib; sourceTree = "<group>"; };
+		0460C016252CDD28009FED91 /* operatingSixDetaileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operatingSixDetaileController.swift; sourceTree = "<group>"; };
+		0460C017252CDD28009FED91 /* operatingSixDetaileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = operatingSixDetaileController.xib; sourceTree = "<group>"; };
 		0468C97D24EBBE15005093A7 /* HttpAddressUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpAddressUtil.swift; sourceTree = "<group>"; };
 		0470A7A624F0AFB4000529C6 /* listViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listViewController.swift; sourceTree = "<group>"; };
 		0470A7A724F0AFB4000529C6 /* listViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listViewController.xib; sourceTree = "<group>"; };
@@ -230,6 +243,8 @@
 		04F04B4424EA6B47009CA668 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		04F04B4524EA6B47009CA668 /* RootNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootNavigationViewController.xib; sourceTree = "<group>"; };
 		04F04B4824EA6F1E009CA668 /* NorthEnvironmenSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NorthEnvironmenSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		04F1A3F7252E3C9400BF3324 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		04F1A3F9252E3CC900BF3324 /* NorthEnvironmenSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NorthEnvironmenSwift.entitlements; sourceTree = "<group>"; };
 		A515C7A57FB7D7D23DFE3CE8 /* Pods-NorthEnvironmenSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthEnvironmenSwift.debug.xcconfig"; path = "Target Support Files/Pods-NorthEnvironmenSwift/Pods-NorthEnvironmenSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5FDD96CFA8DD0BC9CE30B1 /* Pods_NorthEnvironmenSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NorthEnvironmenSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54AF836E3F8D04A293048CE /* Pods-NorthEnvironmenSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NorthEnvironmenSwift.release.xcconfig"; path = "Target Support Files/Pods-NorthEnvironmenSwift/Pods-NorthEnvironmenSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F1A3F8252E3C9400BF3324 /* UserNotifications.framework in Frameworks */,
 				04B10354252091A9004B8E0B /* Pods_NorthEnvironmenSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +309,8 @@
 			children = (
 				048744E6251AF3820029DA30 /* operatingTableViewCell.swift */,
 				048744E7251AF3820029DA30 /* operatingTableViewCell.xib */,
+				0452999D252443C0006E0ED9 /* operatingFourDetaileTableViewCell.swift */,
+				0452999E252443C0006E0ED9 /* operatingFourDetaileTableViewCell.xib */,
 			);
 			path = tableViewcell;
 			sourceTree = "<group>";
@@ -306,6 +324,10 @@
 				04B1034425206ABC004B8E0B /* operatingThreeDetaileController.xib */,
 				04B1034725206ACB004B8E0B /* operatingFourDetaileController.swift */,
 				04B1034825206ACB004B8E0B /* operatingFourDetaileController.xib */,
+				0460C012252C5248009FED91 /* operatingFiveDetaileController.swift */,
+				0460C013252C5248009FED91 /* operatingFiveDetaileController.xib */,
+				0460C016252CDD28009FED91 /* operatingSixDetaileController.swift */,
+				0460C017252CDD28009FED91 /* operatingSixDetaileController.xib */,
 			);
 			path = detaile;
 			sourceTree = "<group>";
@@ -462,6 +484,7 @@
 		04F04B1724EA63CA009CA668 /* NorthEnvironmenSwift */ = {
 			isa = PBXGroup;
 			children = (
+				04F1A3F9252E3CC900BF3324 /* NorthEnvironmenSwift.entitlements */,
 				04F04B1824EA63CA009CA668 /* AppDelegate.swift */,
 				04F04B2C24EA64AA009CA668 /* baseClass */,
 				04F04B2F24EA64AB009CA668 /* logion */,
@@ -569,6 +592,7 @@
 		88945DE09B0BAABFF41D37E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04F1A3F7252E3C9400BF3324 /* UserNotifications.framework */,
 				04B1035025209199004B8E0B /* JXSegmentedView.framework */,
 				BC5FDD96CFA8DD0BC9CE30B1 /* Pods_NorthEnvironmenSwift.framework */,
 			);
@@ -649,6 +673,7 @@
 				04F04B2524EA63CC009CA668 /* LaunchScreen.storyboard in Resources */,
 				04F04B2224EA63CC009CA668 /* Assets.xcassets in Resources */,
 				0420531C2511FC4F0002B427 /* operatingTwoViewController.xib in Resources */,
+				0460C019252CDD28009FED91 /* operatingSixDetaileController.xib in Resources */,
 				04D5D50624EA810400971537 /* loginViewController.xib in Resources */,
 				04F04B4724EA6B47009CA668 /* RootNavigationViewController.xib in Resources */,
 				04D5D4FE24EA800B00971537 /* psersonViewController.xib in Resources */,
@@ -667,11 +692,13 @@
 				0445560425110A540014CB22 /* userinfoViewController.xib in Resources */,
 				04205329251219260002B427 /* aboutViewController.xib in Resources */,
 				0470A7B124F0B0FA000529C6 /* listTableViewCell.xib in Resources */,
+				0460C015252C5248009FED91 /* operatingFiveDetaileController.xib in Resources */,
 				04D5D50224EA801700971537 /* setUpViewController.xib in Resources */,
 				0420532D251219320002B427 /* updateViewController.xib in Resources */,
 				0445560825110A680014CB22 /* passWordViewController.xib in Resources */,
 				0470A7A924F0AFB4000529C6 /* listViewController.xib in Resources */,
 				0470A7AD24F0AFC3000529C6 /* listDetailViewController.xib in Resources */,
+				045299A0252443C0006E0ED9 /* operatingFourDetaileTableViewCell.xib in Resources */,
 				04B1034225206AAB004B8E0B /* operatingTwoDetaileController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,6 +766,7 @@
 				04B104722520997E004B8E0B /* JXSegmentedIndicatorGradientView.swift in Sources */,
 				04B1046B2520997E004B8E0B /* JXSegmentedTitleOrImageCell.swift in Sources */,
 				0470A7B424F0B38B000529C6 /* baseTableViewCell.swift in Sources */,
+				0452999F252443C0006E0ED9 /* operatingFourDetaileTableViewCell.swift in Sources */,
 				042053172511FC360002B427 /* operatingOneViewController.swift in Sources */,
 				04B1046F2520997E004B8E0B /* JXSegmentedCollectionView.swift in Sources */,
 				04B1046C2520997E004B8E0B /* JXSegmentedBaseDataSource.swift in Sources */,
@@ -756,6 +784,7 @@
 				04B104872520997E004B8E0B /* JXSegmentedTitleGradientDataSource.swift in Sources */,
 				04B1034125206AAB004B8E0B /* operatingTwoDetaileController.swift in Sources */,
 				04F04B4224EA6B27009CA668 /* RootTabBarViewController.swift in Sources */,
+				0460C014252C5248009FED91 /* operatingFiveDetaileController.swift in Sources */,
 				04B104922520997E004B8E0B /* JXSegmentedTitleAttributeItemModel.swift in Sources */,
 				0445560725110A680014CB22 /* passWordViewController.swift in Sources */,
 				0470A7A824F0AFB4000529C6 /* listViewController.swift in Sources */,
@@ -790,6 +819,7 @@
 				04F04B4624EA6B47009CA668 /* RootNavigationViewController.swift in Sources */,
 				04B1047A2520997E004B8E0B /* JXSegmentedIndicatorLineView.swift in Sources */,
 				04205328251219260002B427 /* aboutViewController.swift in Sources */,
+				0460C018252CDD28009FED91 /* operatingSixDetaileController.swift in Sources */,
 				04B104852520997E004B8E0B /* JXSegmentedTitleItemModel.swift in Sources */,
 				04B104702520997E004B8E0B /* JXSegmentedView.swift in Sources */,
 				04B104712520997E004B8E0B /* JXSegmentedIndicatorDotLineView.swift in Sources */,
@@ -943,7 +973,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = NorthEnvironmenSwift/NorthEnvironmenSwift.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution: jieting Zhang (S5EHJK76M6)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = S5EHJK76M6;
 				INFOPLIST_FILE = NorthEnvironmenSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -979,6 +1012,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zjt.NorthEnvironmenSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = beikehuanjing;
 				SWIFT_OBJC_BRIDGING_HEADER = "NorthEnvironmenSwift/baseClass/NorthEnvironmenSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -992,7 +1026,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = NorthEnvironmenSwift/NorthEnvironmenSwift.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution: jieting Zhang (S5EHJK76M6)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = S5EHJK76M6;
 				INFOPLIST_FILE = NorthEnvironmenSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1028,6 +1065,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zjt.NorthEnvironmenSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = beikehuanjing;
 				SWIFT_OBJC_BRIDGING_HEADER = "NorthEnvironmenSwift/baseClass/NorthEnvironmenSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
