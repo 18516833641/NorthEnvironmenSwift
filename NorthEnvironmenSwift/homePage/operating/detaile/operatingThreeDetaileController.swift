@@ -197,8 +197,17 @@ class operatingThreeDetaileController: AnalyticsViewController {
                             }
 
                             for cellData in dataList {
+                                
+//                                if cellData.dt!.isEmpty {
+//
+//                                    return
+//                                }
+//                                if cellData.tjrc!.isEmpty {
+//
+//                                    return
+//                                }
                                 self.xStr.append(cellData.dt ?? "")
-                                self.values.append(Double(cellData.tjrc ?? "")!)
+                                self.values.append(Double(String(format: "%.2f", cellData.tjrc ?? ""))!)
                             }
                             
                             self.setLineChartViewData(self.xStr, self.values)

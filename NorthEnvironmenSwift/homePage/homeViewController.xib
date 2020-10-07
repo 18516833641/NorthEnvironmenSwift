@@ -43,7 +43,7 @@
                                         <constraint firstAttribute="width" constant="100" id="aGz-vL-Wqe"/>
                                     </constraints>
                                     <state key="normal" title="  公司简介" backgroundImage="home_butBack">
-                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" red="0.41960784313725491" green="0.92156862745098034" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="onebuttonAction:" destination="-1" eventType="touchUpInside" id="TQu-fR-hsh"/>
@@ -55,7 +55,7 @@
                                         <constraint firstAttribute="width" constant="100" id="FTk-th-iJI"/>
                                     </constraints>
                                     <state key="normal" title="  资质荣誉" backgroundImage="home_butBack">
-                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" red="0.41960784313725491" green="0.92156862745098034" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="twoButtonAction:" destination="-1" eventType="touchUpInside" id="e9s-fg-2tu"/>
@@ -67,7 +67,7 @@
                                         <constraint firstAttribute="width" constant="100" id="rUi-rs-xoc"/>
                                     </constraints>
                                     <state key="normal" title="  主营业务" backgroundImage="home_butBack">
-                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" red="0.41960784313725491" green="0.92156862745098034" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="threeButtonAction:" destination="-1" eventType="touchUpInside" id="vMn-XM-m5U"/>
@@ -84,7 +84,7 @@
                                         <constraint firstAttribute="width" constant="100" id="TqB-mz-d4L"/>
                                     </constraints>
                                     <state key="normal" title="  主导技术" backgroundImage="home_butBack">
-                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" red="0.41960784313725491" green="0.92156862745098034" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="fourButtonAction:" destination="-1" eventType="touchUpInside" id="6b8-V3-W6b"/>
@@ -96,7 +96,7 @@
                                         <constraint firstAttribute="width" constant="100" id="YOl-lB-lMB"/>
                                     </constraints>
                                     <state key="normal" title="  行业应用" backgroundImage="home_butBack">
-                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" red="0.41960784313725491" green="0.92156862745098034" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="fiveButtonAction:" destination="-1" eventType="touchUpInside" id="4ar-Cz-5Mu"/>
@@ -108,7 +108,7 @@
                                         <constraint firstAttribute="width" constant="100" id="SGg-9f-8lH"/>
                                     </constraints>
                                     <state key="normal" title="  工程案例" backgroundImage="home_butBack">
-                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleColor" red="0.41960784313725491" green="0.92156862745098034" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
                                         <action selector="sixButtonAction:" destination="-1" eventType="touchUpInside" id="hiU-lq-h8I"/>
