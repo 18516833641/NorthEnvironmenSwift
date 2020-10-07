@@ -149,22 +149,22 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .three://荣誉资质
             
-//            let cellData = dataSource[indexPath.row]
+            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "资质荣誉详情"
-//            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
-            vc.url = BERKKURL.URL_QualificationList
-//            print("-------\(vc.url)")
+            vc.url = BERKKURL.URL_QualificationList + "/" + cellData.id!
+//            vc.url = BERKKURL.URL_QualificationList
+            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
             break
             
         case .four://主营业务
             
-//            let cellData = dataSource[indexPath.row]
+            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "主营业务详情"
-            vc.url = BERKKURL.URL_MainList
+            vc.url = BERKKURL.URL_MainList + "/" + cellData.id!
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -172,10 +172,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .five://主导技术
             
-//            let cellData = dataSource[indexPath.row]
+            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "主导技术详情"
-            vc.url = BERKKURL.URL_DominantList
+            vc.url = BERKKURL.URL_DominantList + "/" + cellData.id!
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -183,10 +183,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .six://行业应用
             
-//            let cellData = dataSource[indexPath.row]
+            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "行业应用详情"
-            vc.url = BERKKURL.URL_IndustryList
+            vc.url = BERKKURL.URL_IndustryList + "/" + cellData.id!
 //            print("-------\(vc.url)")
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -194,10 +194,10 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             
         case .seven://工程案例
             
-//            let cellData = dataSource[indexPath.row]
+            let cellData = dataSource[indexPath.row]
             let vc = listDetailViewController()
             vc.title = "工程案例详情"
-            vc.url = BERKKURL.URL_EngineeringList
+            vc.url = BERKKURL.URL_EngineeringList + "/" + cellData.id!
             
             self.navigationController?.pushViewController(vc, animated: true)
             

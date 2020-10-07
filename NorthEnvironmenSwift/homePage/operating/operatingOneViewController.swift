@@ -39,6 +39,8 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
                 if error == nil , let data = response{
                     
                 let json = JSON(data)
+                    
+                print("\(json)")
 
                 let content = json["data"]["content"].stringValue
 

@@ -31,6 +31,7 @@ class homeViewController: AnalyticsViewController {
         
         let vc = listDetailViewController()
         vc.title = "公司简介"
+        vc.project = "1"
         vc.url = BERKKURL.URL_CompanyList
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -41,7 +42,7 @@ class homeViewController: AnalyticsViewController {
         let vc = listViewController()
         vc.title = "资质荣誉"
         vc.project = .three
-        vc.url = BERKKURL.URL_QualificationList
+        vc.url = BERKKURL.URL_QualificationList 
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

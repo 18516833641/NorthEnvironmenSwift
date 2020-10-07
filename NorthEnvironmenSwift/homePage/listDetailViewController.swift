@@ -14,6 +14,9 @@ class listDetailViewController: AnalyticsViewController {
     
     var url = ""
     
+    var project = "0"
+    
+    
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
@@ -49,9 +52,23 @@ class listDetailViewController: AnalyticsViewController {
                 
                 let json = JSON(data)
                 
-                let content = json["data"][0]["content"].stringValue
+                print("\(json)")
                 
-                self.textView.attributedText = content.htmlToAttributedString
+                if self.project == "1" {
+                    let content = json["data"][0]["content"].stringValue
+                    self.textView.attributedText = content.htmlToAttributedString
+                }else{
+                    let content = json["data"]["content"].stringValue
+                    self.textView.attributedText = content.htmlToAttributedString
+                }
+                
+                
+                
+//                let str:NSString = "<html><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\"/><head><style type=\"text/css\">body{font-size:18px;}</style></head><body>%@<style>*{ width: %fpx; margin: 0; padding: 0 0; box-sizing: border-box;} img{ width: %fpx;}</style></body></html>" as NSString;
+//
+//                               content = NSString(format: str,content,width,width)
+                
+                
                      
             }
             
