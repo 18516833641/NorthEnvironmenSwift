@@ -65,7 +65,14 @@ class passWordViewController: AnalyticsViewController {
                 
                 return
             }
+        
+            
 
+            guard let old = oldPassWord.text,old.count > 1  else {
+            
+                return
+            }
+        
             guard let pass = nextPassWord.text,pass.count > 1  else {
             
                 return
@@ -75,15 +82,21 @@ class passWordViewController: AnalyticsViewController {
             let headers:HTTPHeaders = [
                      "X-AUTH-TOKEN" : token!,
                  ]
-
-    
-            print("======\(BERKKURL.URL_PassWord + "userid=" + userid + "&password=" + pass)")
-            BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.URL_PassWord + "userid=" + userid + "&password=" + pass, parameters: nil, headers: headers, successed: { (error , response) in
+            BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.URL_PassWord + "userid=" + userid + "&password=" + old + "&newpassword=" + pass, parameters: nil, headers: headers, successed: { (error , response) in
 
                 if error == nil , let data = response{
 
                     print("====\(JSON(data))")
-
+                    
+                    let json = JSON(data)
+                    
+                    
+                    SVProgressHUD.showSuccess(withStatus:json["mag"].stringValue )
+                    SVProgressHUD.dismiss(withDelay: 0.75)
+                    
+                    self.oldPassWord.text = ""
+                    self.newPassWord.text = ""
+                    self.nextPassWord.text = ""
 
 
                 }
