@@ -286,11 +286,16 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         headerView.backgroundColor = UIColor(red: 26/255.0, green: 35/255.0, blue: 49/255.0, alpha: 1)
         self.view.addSubview(headerView)
         
-        let titleLabel = UILabel.init(frame: CGRect(x: 20, y: 5, width: self.view.bounds.width, height: 20))
+        let line = UILabel.init(frame: CGRect(x: 20, y: 5, width: 8, height: 20))
+        line.backgroundColor = UIColor(red: 56/255.0, green: 167/255.0, blue: 184/255.0, alpha: 1)
+        headerView.addSubview(line)
+        
+        let titleLabel = UILabel.init(frame: CGRect(x: 40, y: 5, width: self.view.bounds.width-40, height: 20))
         titleLabel.text = headerArr[section]
-        titleLabel.textColor = .white
+        titleLabel.textColor = UIColor(red: 56/255.0, green: 167/255.0, blue: 184/255.0, alpha: 1)
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 14)
+        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.font = UIFont(name: "Helvetica-Bold", size: 15)
         headerView.addSubview(titleLabel)
         
         let imageBut = UIButton.init(frame: CGRect(x: headerView.frame.width - 100, y: 5, width: 80, height: 20))
@@ -315,7 +320,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         case 0:
             vc.title = "总系统"
             vc.titleArr = self.titleArr
-            vc.contentArr = self.contentArr1
+            vc.contentArr = self.contentArr
             
             
         case 1:
