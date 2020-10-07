@@ -21,6 +21,9 @@ class operatingThreeDetaileController: AnalyticsViewController {
     var projrctStr = ""
     var typeStr = "0"
     
+    var pushUrl = ""
+    
+    
     var xStr = ["1", "2", "3", "4","5","6","7","8","9"] //x轴类别项
     var values = [98.0, 70.3, 40.1, 18.2, 40.2, 20.1, 30, 50, 120] //x轴对应的y轴数据
     
@@ -133,7 +136,7 @@ class operatingThreeDetaileController: AnalyticsViewController {
         
         let vc = operatingSixDetaileController()
         vc.title = "数据记录表"
-//        vc.projrctStr = ""
+        vc.url = pushUrl
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

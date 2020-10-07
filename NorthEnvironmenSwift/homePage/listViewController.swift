@@ -148,7 +148,7 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
             vc.title = "运营项目详情"
             vc.listId = "/" + cellData.id!
             
-            if indexPath.row == 1 {
+            if indexPath.row == 0 {
                 vc.project = "?itmeid=1"
             }else{
                 vc.project = "?itmeid=2"

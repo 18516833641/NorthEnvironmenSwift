@@ -72,80 +72,161 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                let headers:HTTPHeaders = [
                         "X-AUTH-TOKEN" : token!,
                     ]
+        
+        print("=====\(BERKKURL.Url_Sever + BERKKURL.URL_OperatingList + url)")
                 BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.Url_Sever + BERKKURL.URL_OperatingList + url, parameters: nil, headers: headers, successed: { (error, response) in
                     
                     if error == nil , let data = response{
                         
                     let json = JSON(data)
-                    
-                    //脱硫系统
-                    self.contentArr1 = [json["data"]["TJRC04_02"].stringValue,
-                                       json["data"]["TJRC04_03"].stringValue,
-                                       json["data"]["TJRC04_04"].stringValue,
-                                       json["data"]["TJRC04_05"].stringValue,
-                                       json["data"]["TJRC04_06"].stringValue,
-                                       json["data"]["TJRC04_07"].stringValue,
-                                       json["data"]["TJRC04_08"].stringValue
-                        ]
                         
-                    //除尘系统
-                    self.contentArr2 = [json["data"]["TJRC04_09"].stringValue,
-                                       json["data"]["TJRC04_10"].stringValue,
-                                       json["data"]["TJRC04_11"].stringValue,
-                                       json["data"]["TJRC04_12"].stringValue,
-                        ]
+                        print("========\(json)")
                         
-                    //风机系统
-                    self.contentArr3 = [json["data"]["TJRC04_13"].stringValue,
-                                       json["data"]["TJRC04_14"].stringValue,
-                                       json["data"]["TJRC04_15"].stringValue,
-                                       json["data"]["TJRC04_16"].stringValue,
-                                       json["data"]["TJRC04_17"].stringValue,
-                                       json["data"]["TJRC04_18"].stringValue,
-                                       json["data"]["TJRC04_19"].stringValue,
-                                       json["data"]["TJRC04_20"].stringValue,
-                                       json["data"]["TJRC04_21"].stringValue,
-                                       json["data"]["TJRC04_22"].stringValue,
-                                       json["data"]["TJRC04_23"].stringValue,
-                                       json["data"]["TJRC04_24"].stringValue,
-                                       json["data"]["TJRC04_25"].stringValue,
-                                       json["data"]["TJRC04_26"].stringValue,
-                                       json["data"]["TJRC04_27"].stringValue
-                        ]
-                    //原料系统
-                   self.contentArr4 = [json["data"]["TJRC04_28"].stringValue,
-                                       json["data"]["TJRC04_29"].stringValue
-                                 
-                       ]
-                        
-                    //副产物系统
-                    self.contentArr5 = [json["data"]["TJRC04_30"].stringValue,
-                        ]
+                        if self.url == "?itmeid=1" {
+                            
+                           //脱硫系统
+                           self.contentArr1 = [json["data"]["TJRC04_02"].stringValue,
+                                              json["data"]["TJRC04_03"].stringValue,
+                                              json["data"]["TJRC04_04"].stringValue,
+                                              json["data"]["TJRC04_05"].stringValue,
+                                              json["data"]["TJRC04_06"].stringValue,
+                                              json["data"]["TJRC04_07"].stringValue,
+                                              json["data"]["TJRC04_08"].stringValue
+                               ]
+                               
+                           //除尘系统
+                           self.contentArr2 = [json["data"]["TJRC04_09"].stringValue,
+                                              json["data"]["TJRC04_10"].stringValue,
+                                              json["data"]["TJRC04_11"].stringValue,
+                                              json["data"]["TJRC04_12"].stringValue,
+                               ]
+                               
+                           //风机系统
+                           self.contentArr3 = [json["data"]["TJRC04_13"].stringValue,
+                                              json["data"]["TJRC04_14"].stringValue,
+                                              json["data"]["TJRC04_15"].stringValue,
+                                              json["data"]["TJRC04_16"].stringValue,
+                                              json["data"]["TJRC04_17"].stringValue,
+                                              json["data"]["TJRC04_18"].stringValue,
+                                              json["data"]["TJRC04_19"].stringValue,
+                                              json["data"]["TJRC04_20"].stringValue,
+                                              json["data"]["TJRC04_21"].stringValue,
+                                              json["data"]["TJRC04_22"].stringValue,
+                                              json["data"]["TJRC04_23"].stringValue,
+                                              json["data"]["TJRC04_24"].stringValue,
+                                              json["data"]["TJRC04_25"].stringValue,
+                                              json["data"]["TJRC04_26"].stringValue,
+                                              json["data"]["TJRC04_27"].stringValue
+                               ]
+                           //原料系统
+                          self.contentArr4 = [json["data"]["TJRC04_28"].stringValue,
+                                              json["data"]["TJRC04_29"].stringValue
+                                        
+                              ]
+                               
+                           //副产物系统
+                           self.contentArr5 = [json["data"]["TJRC04_30"].stringValue,
+                               ]
+                           
+                           //水系统
+                           self.contentArr6 = [json["data"]["TJRC04_31"].stringValue,
+                                               json["data"]["TJRC04_32"].stringValue,
+                                               json["data"]["TJRC04_33"].stringValue,
+                                               json["data"]["TJRC04_34"].stringValue,
+                               ]
+                           
+                           //气系统
+                           self.contentArr7 = [json["data"]["TJRC04_35"].stringValue,
+                                               json["data"]["TJRC04_36"].stringValue,
+                                               json["data"]["TJRC04_37"].stringValue,
+                                               json["data"]["TJRC04_38"].stringValue,
+                           ]
+                           
+                           //烟气系统
+                           self.contentArr8 = [json["data"]["TJRC04_39"].stringValue,
+                                               json["data"]["TJRC04_40"].stringValue,
+                                               json["data"]["TJRC04_41"].stringValue,
+                                               json["data"]["TJRC04_42"].stringValue,
+                                               json["data"]["TJRC04_43"].stringValue,
+                                               json["data"]["TJRC04_44"].stringValue,
+                                               json["data"]["TJRC04_45"].stringValue,
+                                               json["data"]["TJRC04_46"].stringValue,
+                           ]
+                            
+                        }else{
+                            
+                           //脱硫系统
+                           self.contentArr1 = [json["data"]["TJRC05_02"].stringValue,
+                                              json["data"]["TJRC05_03"].stringValue,
+                                              json["data"]["TJRC05_04"].stringValue,
+                                              json["data"]["TJRC05_05"].stringValue,
+                                              json["data"]["TJRC05_06"].stringValue,
+                                              json["data"]["TJRC05_07"].stringValue,
+                                              json["data"]["TJRC05_08"].stringValue
+                               ]
+                               
+                           //除尘系统
+                           self.contentArr2 = [json["data"]["TJRC05_09"].stringValue,
+                                              json["data"]["TJRC05_10"].stringValue,
+                                              json["data"]["TJRC05_11"].stringValue,
+                                              json["data"]["TJRC05_12"].stringValue,
+                               ]
+                               
+                           //风机系统
+                           self.contentArr3 = [json["data"]["TJRC05_13"].stringValue,
+                                              json["data"]["TJRC05_14"].stringValue,
+                                              json["data"]["TJRC05_15"].stringValue,
+                                              json["data"]["TJRC05_16"].stringValue,
+                                              json["data"]["TJRC05_17"].stringValue,
+                                              json["data"]["TJRC05_18"].stringValue,
+                                              json["data"]["TJRC05_19"].stringValue,
+                                              json["data"]["TJRC05_20"].stringValue,
+                                              json["data"]["TJRC05_21"].stringValue,
+                                              json["data"]["TJRC05_22"].stringValue,
+                                              json["data"]["TJRC05_23"].stringValue,
+                                              json["data"]["TJRC05_24"].stringValue,
+                                              json["data"]["TJRC05_25"].stringValue,
+                                              json["data"]["TJRC05_26"].stringValue,
+                                              json["data"]["TJRC05_27"].stringValue
+                               ]
+                           //原料系统
+                          self.contentArr4 = [json["data"]["TJRC05_28"].stringValue,
+                                              json["data"]["TJRC05_29"].stringValue
+                                        
+                              ]
+                               
+                           //副产物系统
+                           self.contentArr5 = [json["data"]["TJRC05_30"].stringValue,
+                               ]
+                           
+                           //水系统
+                           self.contentArr6 = [json["data"]["TJRC05_31"].stringValue,
+                                               json["data"]["TJRC05_32"].stringValue,
+                                               json["data"]["TJRC05_33"].stringValue,
+                                               json["data"]["TJRC05_34"].stringValue,
+                               ]
+                           
+                           //气系统
+                           self.contentArr7 = [json["data"]["TJRC05_35"].stringValue,
+                                               json["data"]["TJRC05_36"].stringValue,
+                                               json["data"]["TJRC05_37"].stringValue,
+                                               json["data"]["TJRC05_38"].stringValue,
+                           ]
+                           
+                           //烟气系统
+                           self.contentArr8 = [json["data"]["TJRC05_39"].stringValue,
+                                               json["data"]["TJRC05_40"].stringValue,
+                                               json["data"]["TJRC05_41"].stringValue,
+                                               json["data"]["TJRC05_42"].stringValue,
+                                               json["data"]["TJRC05_43"].stringValue,
+                                               json["data"]["TJRC05_44"].stringValue,
+                                               json["data"]["TJRC05_45"].stringValue,
+                                               json["data"]["TJRC05_46"].stringValue,
+                           ]
+                            
+                        }
                     
-                    //水系统
-                    self.contentArr6 = [json["data"]["TJRC04_31"].stringValue,
-                                        json["data"]["TJRC04_32"].stringValue,
-                                        json["data"]["TJRC04_33"].stringValue,
-                                        json["data"]["TJRC04_34"].stringValue,
-                        ]
-                    
-                    //气系统
-                    self.contentArr7 = [json["data"]["TJRC04_35"].stringValue,
-                                        json["data"]["TJRC04_36"].stringValue,
-                                        json["data"]["TJRC04_37"].stringValue,
-                                        json["data"]["TJRC04_38"].stringValue,
-                    ]
-                    
-                    //烟气系统
-                    self.contentArr8 = [json["data"]["TJRC04_39"].stringValue,
-                                        json["data"]["TJRC04_40"].stringValue,
-                                        json["data"]["TJRC04_41"].stringValue,
-                                        json["data"]["TJRC04_42"].stringValue,
-                                        json["data"]["TJRC04_43"].stringValue,
-                                        json["data"]["TJRC04_44"].stringValue,
-                                        json["data"]["TJRC04_45"].stringValue,
-                                        json["data"]["TJRC04_46"].stringValue,
-                    ]
+                   
 
                     self.tableView.reloadData()
                          
@@ -174,7 +255,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         
         let titleLabel = UILabel.init(frame: CGRect(x: 20, y: 5, width: self.view.bounds.width, height: 20))
         titleLabel.text = headerArr[section]
-        titleLabel.textColor = UIColor(red: 56/255.0, green: 167/255.0, blue: 184/255.0, alpha: 1)
+        titleLabel.textColor = .white
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         headerView.addSubview(titleLabel)
@@ -359,54 +440,124 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         
         let vc = operatingThreeDetaileController()
         vc.title = "折线图详情页"
-        vc.projrctStr = ""
+        vc.pushUrl = url
         self.navigationController?.pushViewController(vc, animated: true)
         
         switch indexPath.section {
         case 0:
             //脱硫系统
-            let titleArr = ["TJRC04_02","TJRC04_03","TJRC04_04","TJRC04_05","TJRC04_06","TJRC04_07","TJRC04_08"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_02","TJRC04_03","TJRC04_04","TJRC04_05","TJRC04_06","TJRC04_07","TJRC04_08"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_02","TJRC05_03","TJRC05_04","TJRC05_05","TJRC05_06","TJRC05_07","TJRC05_08"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
+            
+            
 
 
         case 1:
             //除尘系统
-            let titleArr = ["TJRC04_09","TJRC04_10","TJRC04_11","TJRC04_12"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_09","TJRC04_10","TJRC04_11","TJRC04_12"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_09","TJRC05_10","TJRC05_11","TJRC05_12"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
 
         case 2:
             //风机系统
-            let titleArr = ["TJRC04_13","TJRC04_14","TJRC04_15","TJRC04_16","TJRC04_17","TJRC04_18","TJRC04_19","TJRC04_20","TJRC04_21","TJRC04_22","TJRC04_23","TJRC04_24","TJRC04_25","TJRC04_26","TJRC04_27"]
-            vc.projrctStr = titleArr[indexPath.row]
+            
+            
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_13","TJRC04_14","TJRC04_15","TJRC04_16","TJRC04_17","TJRC04_18","TJRC04_19","TJRC04_20","TJRC04_21","TJRC04_22","TJRC04_23","TJRC04_24","TJRC04_25","TJRC04_26","TJRC04_27"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_13","TJRC05_14","TJRC05_15","TJRC05_16","TJRC05_17","TJRC05_18","TJRC05_19","TJRC05_20","TJRC05_21","TJRC05_22","TJRC05_23","TJRC05_24","TJRC05_25","TJRC05_26","TJRC05_27"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
 
         case 3:
             //原料系统
-            let titleArr = ["TJRC04_28","TJRC04_29"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_28","TJRC04_29"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_28","TJRC05_29"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
 
         case 4:
 
             //副产物系统
-            let titleArr = ["TJRC04_30"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_30"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_30"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
 
         case 5:
 
             //水系统
-            let titleArr = ["TJRC04_31","TJRC04_32","TJRC04_33","TJRC04_34"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_31","TJRC04_32","TJRC04_33","TJRC04_34"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_31","TJRC05_32","TJRC05_33","TJRC05_34"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
+            
 
         case 6:
 
             //气系统
-            let titleArr = ["TJRC04_35","TJRC04_36","TJRC04_37","TJRC04_38"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_35","TJRC04_36","TJRC04_37","TJRC04_38"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_35","TJRC05_36","TJRC05_37","TJRC05_38"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
 
         case 7:
 
             //烟气系统
-            let titleArr = ["TJRC04_39","TJRC04_40","TJRC04_41","TJRC04_42","TJRC04_43","TJRC04_44","TJRC04_45","TJRC04_46"]
-            vc.projrctStr = titleArr[indexPath.row]
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_39","TJRC04_40","TJRC04_41","TJRC04_42","TJRC04_43","TJRC04_44","TJRC04_45","TJRC04_46"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_39","TJRC05_40","TJRC05_41","TJRC05_42","TJRC05_43","TJRC05_44","TJRC05_45","TJRC05_46"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
+            
 
         default:
             break

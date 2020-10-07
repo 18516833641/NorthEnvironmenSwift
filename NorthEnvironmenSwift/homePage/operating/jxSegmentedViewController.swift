@@ -15,6 +15,7 @@ class jxSegmentedViewController: AnalyticsViewController {
     var project = ""
     
     
+    
 
     @IBOutlet weak var segmentedView: JXSegmentedView!
     var segmentedDataSource: JXSegmentedTitleDataSource!

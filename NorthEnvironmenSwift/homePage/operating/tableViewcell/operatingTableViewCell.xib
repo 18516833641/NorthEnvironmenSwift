@@ -68,7 +68,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADD-A1-dbE">
-                        <rect key="frame" x="20" y="15" width="206" height="17"/>
+                        <rect key="frame" x="20" y="15" width="226" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.21960784310000001" green="0.65490196079999996" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -88,10 +88,10 @@
                     <constraint firstItem="KdO-rf-a9m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SJ1-2s-4Db"/>
                     <constraint firstItem="tHT-VK-vcp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-0.5" id="Tq0-9U-u8m"/>
                     <constraint firstItem="vLt-la-mHz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VfT-2i-WlG"/>
+                    <constraint firstItem="ADD-A1-dbE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="WCw-iO-EZt"/>
                     <constraint firstItem="vLt-la-mHz" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="YJ4-4V-9AP"/>
                     <constraint firstAttribute="bottom" secondItem="VIn-wU-Lqs" secondAttribute="bottom" id="bp7-a2-PUd"/>
                     <constraint firstItem="Uj7-BH-XCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cWz-jJ-BXJ"/>
-                    <constraint firstItem="ADD-A1-dbE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.5" id="e0E-yR-HU5"/>
                     <constraint firstItem="Uj7-BH-XCc" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="ftY-fO-UzP"/>
                     <constraint firstItem="Uj7-BH-XCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gnV-1B-LBX"/>
                     <constraint firstItem="ADD-A1-dbE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j6H-M7-kYo"/>
@@ -100,7 +100,7 @@
                     <constraint firstItem="tHT-VK-vcp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="t7i-Pi-Yy8"/>
                     <constraint firstItem="5XR-tR-Wax" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vbS-dz-2Wa"/>
                     <constraint firstItem="KdO-rf-a9m" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="w0C-C9-xBm"/>
-                    <constraint firstItem="ADD-A1-dbE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" constant="-40" id="x4W-jv-ebw"/>
+                    <constraint firstItem="ADD-A1-dbE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" constant="-20" id="x4W-jv-ebw"/>
                     <constraint firstItem="KdO-rf-a9m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zOo-rs-esI"/>
                 </constraints>
             </tableViewCellContentView>

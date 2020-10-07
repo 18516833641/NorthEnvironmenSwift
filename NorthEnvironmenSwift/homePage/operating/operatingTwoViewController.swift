@@ -19,8 +19,8 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     
     @IBOutlet weak var tableView: UITableView!
     
-    let titleArr = ["脱硫入口烟气O2浓度","脱硫入口烟气SO2浓度","脱硫入口烟气NOX浓度","脱硫入口烟气粉尘含量","脱硫入口烟气流量","脱硫出口烟气SO2浓度","脱硫塔压差","除尘器压差","本小时出口SO2小时均值","上一小时出口SO2小时均值","上一小时入口SO2小时均值"]
-    var contentArr = ["脱硫入口烟气O2浓度","脱硫入口烟气SO2浓度","脱脱硫入口烟气NOX浓度","脱硫入口烟气粉尘含量","脱硫入口烟气流量","脱硫出口烟气SO2浓度","脱硫塔压差","除尘器压差","本小时出口SO2小时均值","上一小时出口SO2小时均值","上一小时入口SO2小时均值"]
+    let titleArr = ["脱硫入口烟气O₂浓度","脱硫入口烟气SO₂浓度","脱硫入口烟气NOx浓度","脱硫入口烟气粉尘含量","脱硫入口烟气流量","脱硫出口烟气SO₂浓度","脱硫塔压差","除尘器压差","本小时出口SO₂小时均值","上一小时出口SO₂小时均值","上一小时入口SO₂小时均值"]
+    var contentArr = ["脱硫入口烟气O₂浓度","脱硫入口烟气SO₂浓度","脱脱硫入口烟气NOx浓度","脱硫入口烟气粉尘含量","脱硫入口烟气流量","脱硫出口烟气SO₂浓度","脱硫塔压差","除尘器压差","本小时出口SO₂小时均值","上一小时出口SO₂小时均值","上一小时入口SO₂小时均值"]
     
     
     override func viewDidLoad() {
@@ -122,19 +122,45 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
                 if error == nil , let data = response{
                     
                 let json = JSON(data)
+                    print(json)
+//                    if indexPath.row == 0 {
+//                        vc.project = "?itmeid=1"
+//                    }else{
+//                        vc.project = "?itmeid=2"
+//                    }
+                    if self.url == "?itmeid=1" {
+                        
+                        self.contentArr = [json["data"]["TJRC04_01"].stringValue,
+                                       json["data"]["TJRC04_47"].stringValue,
+                                       json["data"]["TJRC04_48"].stringValue,
+                                       json["data"]["TJRC04_49"].stringValue,
+                                       json["data"]["TJRC04_50"].stringValue,
+                                       json["data"]["TJRC04_51"].stringValue,
+                                       json["data"]["TJRC04_52"].stringValue,
+                                       json["data"]["TJRC04_53"].stringValue,
+                                       json["data"]["TJRC04_54"].stringValue,
+                                       json["data"]["TJRC04_55"].stringValue,
+                                       json["data"]["TJRC04_56"].stringValue,
+                        ]
+                        
+                    }else{
+                        
+                        self.contentArr = [json["data"]["TJRC05_01"].stringValue,
+                                       json["data"]["TJRC05_47"].stringValue,
+                                       json["data"]["TJRC05_48"].stringValue,
+                                       json["data"]["TJRC05_49"].stringValue,
+                                       json["data"]["TJRC05_50"].stringValue,
+                                       json["data"]["TJRC05_51"].stringValue,
+                                       json["data"]["TJRC05_52"].stringValue,
+                                       json["data"]["TJRC05_53"].stringValue,
+                                       json["data"]["TJRC05_54"].stringValue,
+                                       json["data"]["TJRC05_55"].stringValue,
+                                       json["data"]["TJRC05_56"].stringValue,
+                        ]
+                        
+                    }
                 
-                self.contentArr = [json["data"]["TJRC04_01"].stringValue,
-                                   json["data"]["TJRC04_47"].stringValue,
-                                   json["data"]["TJRC04_48"].stringValue,
-                                   json["data"]["TJRC04_49"].stringValue,
-                                   json["data"]["TJRC04_50"].stringValue,
-                                   json["data"]["TJRC04_51"].stringValue,
-                                   json["data"]["TJRC04_52"].stringValue,
-                                   json["data"]["TJRC04_53"].stringValue,
-                                   json["data"]["TJRC04_54"].stringValue,
-                                   json["data"]["TJRC04_55"].stringValue,
-                                   json["data"]["TJRC04_56"].stringValue,
-                    ]
+                
 
                     self.tableView.reloadData()
                     print("-------------------------\(self.contentArr)")

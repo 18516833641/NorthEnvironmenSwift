@@ -25,6 +25,10 @@ class loginViewController: AnalyticsViewController {
         
         self.userPassText.attributedPlaceholder = NSAttributedString.init(string:"请输入用户密码", attributes: [
         NSAttributedString.Key.foregroundColor:UIColor.white])
+        
+        
+        userText.text = "inter"
+        userPassText.text = "123456"
     }
 
     @IBAction func loginAction(_ sender: Any) {
