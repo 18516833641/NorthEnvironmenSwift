@@ -30,13 +30,16 @@ class operatingThreeDetaileController: AnalyticsViewController {
     
     var pushUrl = ""
     
+    var titleStr = ""//label文字
+    
+    
     
     var xStr:[String] = [] //x轴类别项
     var values:[Double] = [] //x轴对应的y轴数据
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        titleLabel.text = titleStr
         httpService()
         
         ChartView.delegate = self

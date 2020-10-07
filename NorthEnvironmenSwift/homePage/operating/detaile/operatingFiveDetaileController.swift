@@ -18,6 +18,11 @@ class operatingFiveDetaileController: AnalyticsViewController {
     
     var contentArr:[String] = []
     
+    var biaotiArr:[String] = []
+    
+    var titleUrl = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,6 +60,18 @@ extension operatingFiveDetaileController:UITableViewDelegate,UITableViewDataSour
       
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = operatingThreeDetaileController()
+        vc.title = "数据曲线详情"
+        vc.pushUrl = titleUrl
+        vc.projrctStr = biaotiArr[indexPath.row]
+        vc.titleStr = titleArr[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+       
     }
     
     

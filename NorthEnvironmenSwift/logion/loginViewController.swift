@@ -27,8 +27,8 @@ class loginViewController: AnalyticsViewController {
         NSAttributedString.Key.foregroundColor:UIColor.white])
         
         
-//        userText.text = "inter"
-//        userPassText.text = "123456"
+        userText.text = "inter"
+        userPassText.text = "123456"
     }
 
     @IBAction func loginAction(_ sender: Any) {
