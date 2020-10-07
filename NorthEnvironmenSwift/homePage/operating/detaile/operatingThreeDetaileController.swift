@@ -207,7 +207,7 @@ class operatingThreeDetaileController: AnalyticsViewController {
 //                                    return
 //                                }
                                 self.xStr.append(cellData.dt ?? "")
-                                self.values.append(Double(String(format: "%.2f", cellData.tjrc ?? ""))!)
+                                self.values.append(Double(cellData.tjrc ?? "")!)
                             }
                             
                             self.setLineChartViewData(self.xStr, self.values)
