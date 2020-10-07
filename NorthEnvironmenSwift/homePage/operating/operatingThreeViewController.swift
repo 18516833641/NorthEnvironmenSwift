@@ -364,8 +364,8 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
         case 3:
             vc.title = "风机系统"
-            vc.titleArr = self.titleArr2
-            vc.contentArr = self.contentArr2
+            vc.titleArr = self.titleArr3
+            vc.contentArr = self.contentArr3
             
             if self.url == "?itmeid=1" {
                 
@@ -376,8 +376,8 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
         case 4:
             vc.title = "原料系统"
-            vc.titleArr = self.titleArr2
-            vc.contentArr = self.contentArr2
+            vc.titleArr = self.titleArr4
+            vc.contentArr = self.contentArr4
             
             if self.url == "?itmeid=1" {
                vc.biaotiArr = ["TJRC04_28","TJRC04_29"]
@@ -387,8 +387,8 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
         case 5:
             vc.title = "副产物系统"
-            vc.titleArr = self.titleArr2
-            vc.contentArr = self.contentArr2
+            vc.titleArr = self.titleArr5
+            vc.contentArr = self.contentArr5
             
             if self.url == "?itmeid=1" {
                 vc.biaotiArr = ["TJRC04_30"]
@@ -398,8 +398,8 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
         case 6:
             vc.title = "水系统"
-            vc.titleArr = self.titleArr2
-            vc.contentArr = self.contentArr2
+            vc.titleArr = self.titleArr6
+            vc.contentArr = self.contentArr6
             
             if self.url == "?itmeid=1" {
                 vc.biaotiArr = ["TJRC04_31","TJRC04_32","TJRC04_33","TJRC04_34"]
@@ -409,8 +409,8 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
         case 7:
             vc.title = "气系统"
-            vc.titleArr = self.titleArr2
-            vc.contentArr = self.contentArr2
+            vc.titleArr = self.titleArr7
+            vc.contentArr = self.contentArr7
             
             if self.url == "?itmeid=1" {
                 vc.biaotiArr = ["TJRC04_35","TJRC04_36","TJRC04_37","TJRC04_38"]
@@ -420,8 +420,8 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
         case 8:
             vc.title = "烟气系统"
-            vc.titleArr = self.titleArr2
-            vc.contentArr = self.contentArr2
+            vc.titleArr = self.titleArr8
+            vc.contentArr = self.contentArr8
             
             if self.url == "?itmeid=1" {
                 vc.biaotiArr = ["TJRC04_39","TJRC04_40","TJRC04_41","TJRC04_42","TJRC04_43","TJRC04_44","TJRC04_45","TJRC04_46"]
@@ -590,9 +590,6 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
             
-            
-
-
         case 2:
             //除尘系统
             vc.titleStr = self.titleArr2[indexPath.row]

@@ -99,7 +99,15 @@ class operatingThreeDetaileController: AnalyticsViewController {
            //线条显示样式
            lineChartDataSet.colors = [UIColor(red: 40/255.0, green: 243/255.0, blue: 253/255.0, alpha: 1)]
         
-        lineChartDataSet.valueTextColor = .white
+           lineChartDataSet.valueTextColor = .white
+        
+          lineChartDataSet.drawCirclesEnabled = true;//是否绘制拐点
+
+           lineChartDataSet.cubicIntensity = 0.2// 曲线弧度
+
+           lineChartDataSet.circleRadius = 10.0//拐点半径
+
+            lineChartDataSet.mode = .cubicBezier// 模式为曲线模式
         
            lineChartDataSet.valueFont = .systemFont(ofSize: 12)
            
@@ -206,8 +214,14 @@ class operatingThreeDetaileController: AnalyticsViewController {
 //
 //                                    return
 //                                }
+                                let double = Double(cellData.tjrc ?? "")
+                                
+                                let value = String(format: "%.2f",double!)
+                                
+                                let doubles = Double(value)
+
                                 self.xStr.append(cellData.dt ?? "")
-                                self.values.append(Double(cellData.tjrc ?? "")!)
+                                self.values.append(doubles!)
                             }
                             
                             self.setLineChartViewData(self.xStr, self.values)
