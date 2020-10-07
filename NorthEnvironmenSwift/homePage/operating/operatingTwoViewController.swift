@@ -130,32 +130,32 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
 //                    }
                     if self.url == "?itmeid=1" {
                         
-                        self.contentArr = [json["data"]["TJRC04_01"].stringValue,
-                                       json["data"]["TJRC04_47"].stringValue,
-                                       json["data"]["TJRC04_48"].stringValue,
-                                       json["data"]["TJRC04_49"].stringValue,
-                                       json["data"]["TJRC04_50"].stringValue,
-                                       json["data"]["TJRC04_51"].stringValue,
+                        self.contentArr = [json["data"]["TJRC04_01"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_47"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_48"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_49"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_50"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_51"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                        json["data"]["TJRC04_52"].stringValue,
                                        json["data"]["TJRC04_53"].stringValue,
-                                       json["data"]["TJRC04_54"].stringValue,
-                                       json["data"]["TJRC04_55"].stringValue,
-                                       json["data"]["TJRC04_56"].stringValue,
+                                       json["data"]["TJRC04_54"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_55"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC04_56"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                         ]
                         
                     }else{
                         
-                        self.contentArr = [json["data"]["TJRC05_01"].stringValue,
-                                       json["data"]["TJRC05_47"].stringValue,
-                                       json["data"]["TJRC05_48"].stringValue,
-                                       json["data"]["TJRC05_49"].stringValue,
-                                       json["data"]["TJRC05_50"].stringValue,
-                                       json["data"]["TJRC05_51"].stringValue,
+                        self.contentArr = [json["data"]["TJRC05_01"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_47"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_48"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_49"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_50"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_51"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                        json["data"]["TJRC05_52"].stringValue,
                                        json["data"]["TJRC05_53"].stringValue,
-                                       json["data"]["TJRC05_54"].stringValue,
-                                       json["data"]["TJRC05_55"].stringValue,
-                                       json["data"]["TJRC05_56"].stringValue,
+                                       json["data"]["TJRC05_54"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_55"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                       json["data"]["TJRC05_56"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                         ]
                         
                     }
@@ -168,9 +168,12 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
                 }
                 
             }) { (error, nil) in
-                SVProgressHUD.showError(withStatus: "\(String(describing: error))")
-                SVProgressHUD.dismiss(withDelay: 1)
-                print("======\(String(describing: error))")
+                SVProgressHUD.showError(withStatus: "登录已失效")
+                SVProgressHUD.dismiss(withDelay: 0.75)
+                let vc = loginViewController()
+                self.view.window?.rootViewController = vc
+                self.view.window?.backgroundColor = .white
+                self.view.window?.makeKeyAndVisible()
             }
             
     }

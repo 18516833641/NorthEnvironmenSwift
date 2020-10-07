@@ -19,6 +19,8 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
     
     @IBOutlet weak var tableView: UITableView!
     
+    //总系统
+    let titleArr = ["脱硫入口烟气O₂浓度","脱硫入口烟气SO₂浓度","脱硫入口烟气NOx浓度","脱硫入口烟气粉尘含量","脱硫入口烟气流量","脱硫出口烟气SO₂浓度","脱硫塔压差","除尘器压差","本小时出口SO₂小时均值","上一小时出口SO₂小时均值","上一小时入口SO₂小时均值"]
     
     //脱硫系统
     let titleArr1 = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
@@ -44,6 +46,7 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
     //烟气系统
     let titleArr8 = ["冷风阀开度反馈","一氧化碳浓度检测1","原烟气挡板门开到位","原烟气挡板门关到位","净烟气挡板门开到位","净烟气挡板门关到位","旁路挡板门开到位","旁路挡板门关到位"]
     
+    var contentArr = ["","","","","","","","","","",""]
     var contentArr1 = ["","","","","","",""]
     var contentArr2 = ["","","",""]
     var contentArr3 = ["","","","","","","","","","","","","","",""]
@@ -83,6 +86,20 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                         print("========\(json)")
                         
                         if self.url == "?itmeid=1" {
+                            
+                            //总系统
+                            self.contentArr = [json["data"]["TJRC04_01"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_47"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_48"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_49"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_50"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_51"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_52"].stringValue,
+                                           json["data"]["TJRC04_53"].stringValue,
+                                           json["data"]["TJRC04_54"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_55"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC04_56"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                            ]
                             
                            //脱硫系统
                            self.contentArr1 = [json["data"]["TJRC04_02"].stringValue,
@@ -129,17 +146,17 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                                ]
                            
                            //水系统
-                           self.contentArr6 = [json["data"]["TJRC04_31"].stringValue,
-                                               json["data"]["TJRC04_32"].stringValue,
-                                               json["data"]["TJRC04_33"].stringValue,
+                           self.contentArr6 = [json["data"]["TJRC04_31"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                               json["data"]["TJRC04_32"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                               json["data"]["TJRC04_33"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                                json["data"]["TJRC04_34"].stringValue,
                                ]
                            
                            //气系统
                            self.contentArr7 = [json["data"]["TJRC04_35"].stringValue,
                                                json["data"]["TJRC04_36"].stringValue,
-                                               json["data"]["TJRC04_37"].stringValue,
-                                               json["data"]["TJRC04_38"].stringValue,
+                                               json["data"]["TJRC04_37"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                               json["data"]["TJRC04_38"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                            ]
                            
                            //烟气系统
@@ -154,6 +171,19 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                            ]
                             
                         }else{
+                            //总系统
+                            self.contentArr = [json["data"]["TJRC05_01"].stringValue,
+                                           json["data"]["TJRC05_47"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC05_48"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC05_49"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC05_50"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC05_51"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                           json["data"]["TJRC05_52"].stringValue,
+                                           json["data"]["TJRC05_53"].stringValue,
+                                           json["data"]["TJRC05_54"].stringValue,
+                                           json["data"]["TJRC05_55"].stringValue,
+                                           json["data"]["TJRC05_56"].stringValue,
+                            ]
                             
                            //脱硫系统
                            self.contentArr1 = [json["data"]["TJRC05_02"].stringValue,
@@ -200,17 +230,17 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                                ]
                            
                            //水系统
-                           self.contentArr6 = [json["data"]["TJRC05_31"].stringValue,
-                                               json["data"]["TJRC05_32"].stringValue,
-                                               json["data"]["TJRC05_33"].stringValue,
+                           self.contentArr6 = [json["data"]["TJRC05_31"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                               json["data"]["TJRC05_32"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                               json["data"]["TJRC05_33"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                                json["data"]["TJRC05_34"].stringValue,
                                ]
                            
                            //气系统
                            self.contentArr7 = [json["data"]["TJRC05_35"].stringValue,
                                                json["data"]["TJRC05_36"].stringValue,
-                                               json["data"]["TJRC05_37"].stringValue,
-                                               json["data"]["TJRC05_38"].stringValue,
+                                               json["data"]["TJRC05_37"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                               json["data"]["TJRC05_38"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                            ]
                            
                            //烟气系统
@@ -233,9 +263,12 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
                     }
                     
                 }) { (error, nil) in
-                    SVProgressHUD.showError(withStatus: "\(String(describing: error))")
-                    SVProgressHUD.dismiss(withDelay: 1)
-                    print("======\(String(describing: error))")
+                    SVProgressHUD.showError(withStatus: "登录已失效")
+                    SVProgressHUD.dismiss(withDelay: 0.75)
+                    let vc = loginViewController()
+                    self.view.window?.rootViewController = vc
+                    self.view.window?.backgroundColor = .white
+                    self.view.window?.makeKeyAndVisible()
                 }
                 
         }
@@ -247,7 +280,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
     
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerArr = ["脱硫系统","除尘系统","风机系统","原料系统","副产物系统","水系统","气系统","烟气系统"]
+        let headerArr = ["总系统","脱硫系统","除尘系统","风机系统","原料系统","副产物系统","水系统","气系统","烟气系统"]
         
         let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 30))
         headerView.backgroundColor = UIColor(red: 26/255.0, green: 35/255.0, blue: 49/255.0, alpha: 1)
@@ -280,41 +313,47 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         
         switch select.tag {
         case 0:
+            vc.title = "总系统"
+            vc.titleArr = self.titleArr
+            vc.contentArr = self.contentArr1
+            
+            
+        case 1:
             vc.title = "脱硫系统"
             vc.titleArr = self.titleArr1
             vc.contentArr = self.contentArr1
             
-        case 1:
+        case 2:
             vc.title = "除尘系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
             
-        case 2:
+        case 3:
             vc.title = "风机系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
             
-        case 3:
+        case 4:
             vc.title = "原料系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
             
-        case 4:
+        case 5:
             vc.title = "副产物系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
             
-        case 5:
+        case 6:
             vc.title = "水系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
             
-        case 6:
+        case 7:
             vc.title = "气系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
             
-        case 7:
+        case 8:
             vc.title = "烟气系统"
             vc.titleArr = self.titleArr2
             vc.contentArr = self.contentArr2
@@ -330,7 +369,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 8
+        return 9
     }
     
     //组高度
@@ -350,28 +389,32 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
+            
         case 0:
-            return 7
+            return 11
             
         case 1:
-            return 4
+            return 7
             
         case 2:
-            return 15
+            return 4
             
         case 3:
-            return 2
+            return 15
             
         case 4:
-            return 1
+            return 2
             
         case 5:
-            return 4
+            return 1
             
         case 6:
             return 4
             
         case 7:
+            return 4
+            
+        case 8:
             return 8
             
         default:
@@ -389,40 +432,44 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         
         switch indexPath.section {
         case 0:
+            cell.titleLabel.text = titleArr[indexPath.row]
+            cell.contenLabel.text = contentArr[indexPath.row]
+            
+        case 1:
             cell.titleLabel.text = titleArr1[indexPath.row]
             cell.contenLabel.text = contentArr1[indexPath.row]
             
-        case 1:
+        case 2:
             
             cell.titleLabel.text = titleArr2[indexPath.row]
             cell.contenLabel.text = contentArr2[indexPath.row]
             
-        case 2:
+        case 3:
             
             cell.titleLabel.text = titleArr3[indexPath.row]
             cell.contenLabel.text = contentArr3[indexPath.row]
             
-        case 3:
+        case 4:
             
             cell.titleLabel.text = titleArr4[indexPath.row]
             cell.contenLabel.text = contentArr4[indexPath.row]
             
-        case 4:
+        case 5:
             
             cell.titleLabel.text = titleArr5[indexPath.row]
             cell.contenLabel.text = contentArr5[indexPath.row]
             
-        case 5:
+        case 6:
             
             cell.titleLabel.text = titleArr6[indexPath.row]
             cell.contenLabel.text = contentArr6[indexPath.row]
             
-        case 6:
+        case 7:
            
             cell.titleLabel.text = titleArr7[indexPath.row]
             cell.contenLabel.text = contentArr7[indexPath.row]
             
-        case 7:
+        case 8:
             
             cell.titleLabel.text = titleArr8[indexPath.row]
             cell.contenLabel.text = contentArr8[indexPath.row]
@@ -445,6 +492,19 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
         
         switch indexPath.section {
         case 0:
+            //x总系统
+            if self.url == "?itmeid=1" {
+                
+                let titleArr = ["TJRC04_01","TJRC04_47","TJRC04_48","TJRC04_49","TJRC04_50","TJRC04_51","TJRC04_52","TJRC04_53","TJRC04_54","TJRC04_55","TJRC04_56"]
+                vc.projrctStr = titleArr[indexPath.row]
+            }else{
+                
+                let titleArr = ["TJRC05_01","TJRC05_47","TJRC05_48","TJRC05_49","TJRC05_50","TJRC05_51","TJRC05_52","TJRC05_53","TJRC05_54","TJRC05_55","TJRC05_56"]
+                vc.projrctStr = titleArr[indexPath.row]
+                
+            }
+            
+        case 1:
             //脱硫系统
             if self.url == "?itmeid=1" {
                 
@@ -460,7 +520,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             
 
 
-        case 1:
+        case 2:
             //除尘系统
             if self.url == "?itmeid=1" {
                 
@@ -473,7 +533,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
 
-        case 2:
+        case 3:
             //风机系统
             
             
@@ -488,7 +548,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
 
-        case 3:
+        case 4:
             //原料系统
             if self.url == "?itmeid=1" {
                 
@@ -501,7 +561,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
 
-        case 4:
+        case 5:
 
             //副产物系统
             if self.url == "?itmeid=1" {
@@ -515,7 +575,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
 
-        case 5:
+        case 6:
 
             //水系统
             if self.url == "?itmeid=1" {
@@ -530,7 +590,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
             }
             
 
-        case 6:
+        case 7:
 
             //气系统
             if self.url == "?itmeid=1" {
@@ -544,7 +604,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
 
-        case 7:
+        case 8:
 
             //烟气系统
             if self.url == "?itmeid=1" {

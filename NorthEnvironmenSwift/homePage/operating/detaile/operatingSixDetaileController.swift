@@ -70,9 +70,9 @@ class operatingSixDetaileController: AnalyticsViewController {
                         json["data"]["TJRC04_06"].stringValue,
                         json["data"]["TJRC04_07"].stringValue,
                         json["data"]["TJRC04_08"].stringValue,
-                        json["data"]["TJRC04_31"].stringValue,
-                        json["data"]["TJRC04_32"].stringValue,
-                        json["data"]["TJRC04_33"].stringValue,
+                        json["data"]["TJRC04_31"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                        json["data"]["TJRC04_32"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                        json["data"]["TJRC04_33"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                         json["data"]["TJRC04_34"].stringValue,
                         json["data"]["TJRC04_09"].stringValue,
                         json["data"]["TJRC04_10"].stringValue,
@@ -120,9 +120,9 @@ class operatingSixDetaileController: AnalyticsViewController {
                         json["data"]["TJRC05_06"].stringValue,
                         json["data"]["TJRC05_07"].stringValue,
                         json["data"]["TJRC05_08"].stringValue,
-                        json["data"]["TJRC05_31"].stringValue,
-                        json["data"]["TJRC05_32"].stringValue,
-                        json["data"]["TJRC05_33"].stringValue,
+                        json["data"]["TJRC05_31"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                        json["data"]["TJRC05_32"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                        json["data"]["TJRC05_33"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                         json["data"]["TJRC05_34"].stringValue,
                         json["data"]["TJRC05_09"].stringValue,
                         json["data"]["TJRC05_10"].stringValue,
@@ -161,9 +161,12 @@ class operatingSixDetaileController: AnalyticsViewController {
                 }
                 
             }) { (error, nil) in
-                SVProgressHUD.showError(withStatus: "\(String(describing: error))")
-                SVProgressHUD.dismiss(withDelay: 1)
-                print("======\(String(describing: error))")
+                SVProgressHUD.showError(withStatus: "登录已失效")
+                SVProgressHUD.dismiss(withDelay: 0.75)
+                let vc = loginViewController()
+                self.view.window?.rootViewController = vc
+                self.view.window?.backgroundColor = .white
+                self.view.window?.makeKeyAndVisible()
             }
             
     }

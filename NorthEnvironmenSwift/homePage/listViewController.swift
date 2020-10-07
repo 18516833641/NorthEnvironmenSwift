@@ -63,22 +63,13 @@ class listViewController: AnalyticsViewController {
                         
                         print("==============\(String(describing: model))")
                         guard let dataList = model?.data,error == nil else {
-                            
-//                            self.noData.image = UIImage(named: "sever_error")
-//                            self.noData.isHidden = false
+
                             return
                         }
                         
                         for cellData in dataList {
                            self.dataSource.append(cellData)
                        }
-                       
-//                       if self.dataSource.count == 0 {
-//                           self.noData.image = UIImage(named: "new_nothing3")
-//                           self.noData.isHidden = false
-//                       }else{
-//                           self.noData.isHidden = true
-//                       }
                         
                         self.tableView.reloadData()
                                          
@@ -88,9 +79,12 @@ class listViewController: AnalyticsViewController {
                     
                 }) { (error, nil) in
             
-                    SVProgressHUD.showError(withStatus: "\(String(describing: error))")
-                    SVProgressHUD.dismiss(withDelay: 1.75)
-                    print("======\(String(describing: error))")
+                    SVProgressHUD.showError(withStatus: "登录已失效")
+                    SVProgressHUD.dismiss(withDelay: 0.75)
+                    let vc = loginViewController()
+                    self.view.window?.rootViewController = vc
+                    self.view.window?.backgroundColor = .white
+                    self.view.window?.makeKeyAndVisible()
                 }
     }
 
@@ -120,17 +114,8 @@ extension listViewController:UITableViewDelegate,UITableViewDataSource{
         let listData = dataSource[indexPath.row]
         
         cell.titleLabel.text = listData.tile
-        
-//        print("----------------\(BERKKURL.Url_SeverImage + listData.thmb!)")
 
         cell.listImage.sd_setImage(with: URL(string:BERKKURL.Url_SeverImage + listData.thmb!), placeholderImage: UIImage(named: "zwsj"), options: .refreshCached, completed: nil)
-        
-        
-        if let imageStr = listData.thmb , let imageUrl:URL = URL(string: BERKKURL.Url_SeverImage + imageStr)  {
-//            print("----------------\(imageUrl)")
-//            cell.listImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: ""), options: .refreshCached, completed: nil)
-//            cell.listImage.sd_setImage(with: url, completed: nil)
-        }
       
         return cell
         

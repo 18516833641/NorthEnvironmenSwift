@@ -21,6 +21,7 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.isEditable = false
 
         httpService()
     }
@@ -46,9 +47,12 @@ class operatingOneViewController: AnalyticsViewController,JXSegmentedListContain
                 }
                 
             }) { (error, nil) in
-                SVProgressHUD.showError(withStatus: "\(String(describing: error))")
-                SVProgressHUD.dismiss(withDelay: 1)
-                print("======\(String(describing: error))")
+                SVProgressHUD.showError(withStatus: "登录已失效")
+                SVProgressHUD.dismiss(withDelay: 0.75)
+                let vc = loginViewController()
+                self.view.window?.rootViewController = vc
+                self.view.window?.backgroundColor = .white
+                self.view.window?.makeKeyAndVisible()
             }
             
     }
