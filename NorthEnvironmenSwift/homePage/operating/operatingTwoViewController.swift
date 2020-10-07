@@ -110,7 +110,7 @@ class operatingTwoViewController: AnalyticsViewController,JXSegmentedListContain
     
     
     
-    func httpService() -> Void {
+    func httpService() {
             
            let token = UserDefaults.string(forKey: .token)
             

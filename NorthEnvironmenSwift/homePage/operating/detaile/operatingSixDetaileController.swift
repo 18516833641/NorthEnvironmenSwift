@@ -34,7 +34,7 @@ class operatingSixDetaileController: AnalyticsViewController {
     }
     
     
-    func httpService() -> Void {
+    func httpService() {
             
            let token = UserDefaults.string(forKey: .token)
             

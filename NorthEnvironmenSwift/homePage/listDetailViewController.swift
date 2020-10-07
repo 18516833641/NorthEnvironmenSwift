@@ -24,7 +24,7 @@ class listDetailViewController: AnalyticsViewController {
     }
     
     /// 修改原生tabbar
-    func httpService() -> Void {
+    func httpService() {
         
 //       let param = ["username":"" as AnyObject,
 //

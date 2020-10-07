@@ -65,7 +65,7 @@ class operatingThreeViewController: AnalyticsViewController,JXSegmentedListConta
     }
     
     
-     func httpService() -> Void {
+     func httpService() {
                 
                let token = UserDefaults.string(forKey: .token)
                 
@@ -439,7 +439,7 @@ extension operatingThreeViewController:UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = operatingThreeDetaileController()
-        vc.title = "折线图详情页"
+        vc.title = "数据曲线详情"
         vc.pushUrl = url
         self.navigationController?.pushViewController(vc, animated: true)
         

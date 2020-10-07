@@ -16,6 +16,8 @@ class operatingFourDetaileController: AnalyticsViewController {
     
     var projrctStr = ""
     var typeStr = ""
+    var str = ""
+    
     
     var dataSource:[t_fault_data] = []
 //    var nameArr:[String] = []
@@ -35,7 +37,7 @@ class operatingFourDetaileController: AnalyticsViewController {
     }
     
     
-    func httpService() -> Void {
+    func httpService() {
                 
                let token = UserDefaults.string(forKey: .token)
                 
@@ -43,8 +45,14 @@ class operatingFourDetaileController: AnalyticsViewController {
                         "X-AUTH-TOKEN" : token!,
                     ]
         
-//        print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")
-                BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr, parameters: nil, headers: headers, successed: { (error, response) in
+        if projrctStr == "?itmeid=1" {
+            str = "1"
+        }else{
+            str = "2"
+        }
+        
+//        print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")?itmeid=1
+                BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + str + "&" + typeStr, parameters: nil, headers: headers, successed: { (error, response) in
                     
                     if error == nil , let data = response{
                         

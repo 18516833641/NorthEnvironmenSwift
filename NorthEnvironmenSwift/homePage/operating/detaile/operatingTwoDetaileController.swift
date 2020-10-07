@@ -91,7 +91,7 @@ class operatingTwoDetaileController: AnalyticsViewController {
     }
     
     
-    func httpService() -> Void {
+    func httpService(){
                
               let token = UserDefaults.string(forKey: .token)
                
