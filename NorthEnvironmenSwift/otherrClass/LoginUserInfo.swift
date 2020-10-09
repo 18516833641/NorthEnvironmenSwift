@@ -15,6 +15,7 @@ struct t_LoginInfo_data:Decodable {
     var id:String? = nil//
     var userNm:String? = nil//
     var phn:String? = nil//
+    var deviceId:String? = nil//设备deviceId
 }
 
 extension UserDefaults {
@@ -24,6 +25,7 @@ extension UserDefaults {
         case id//id
         case userNm//username
         case phn//电话
+        case deviceId // 设备deviceId
     }
     
     //存数据

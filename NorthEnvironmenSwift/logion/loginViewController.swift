@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class loginViewController: AnalyticsViewController {
 
@@ -27,8 +28,8 @@ class loginViewController: AnalyticsViewController {
         NSAttributedString.Key.foregroundColor:UIColor.white])
         
         
-        userText.text = "inter"
-        userPassText.text = "123456"
+//        userText.text = "inter"
+//        userPassText.text = "123456"
     }
 
     @IBAction func loginAction(_ sender: Any) {
@@ -79,9 +80,12 @@ class loginViewController: AnalyticsViewController {
                 UserDefaults.set(value: model?.attributes?.phn ?? "", forKey: UserDefaults.LoginInfo.phn)
                 UserDefaults.set(value: model?.attributes?.id ?? "", forKey: UserDefaults.LoginInfo.id)
 
+                
+                self.updataDeviceId()
+                
 //                //登录成功
 //                if result?.code == 1 {
-                
+    
                     SVProgressHUD.show(withStatus: "登录成功")
                     SVProgressHUD.dismiss(withDelay: 0.75)
                 
@@ -89,11 +93,6 @@ class loginViewController: AnalyticsViewController {
                     self.view.window?.rootViewController = vc
                     self.view.window?.backgroundColor = .white
                     self.view.window?.makeKeyAndVisible()
-                
-//                }else{//登录失败
-//                    SVProgressHUD.showError(withStatus: "登录失败：\(String(describing: result?.msg))")
-//                    SVProgressHUD.dismiss(withDelay: 1.75)
-//                }
                 
             }
             
@@ -105,5 +104,34 @@ class loginViewController: AnalyticsViewController {
             SVProgressHUD.dismiss(withDelay: 0.75)
         }
         
+    }
+    
+    
+    func updataDeviceId() {
+                
+        let token = UserDefaults.string(forKey: .token)
+         
+        let headers:HTTPHeaders = [
+                 "X-AUTH-TOKEN" : token!,
+             ]
+        let devid = UserDefaults.string(forKey: .deviceId)
+
+        BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.Url_Sever + BERKKURL.URL_deviceId + devid!, parameters: nil, headers: headers, successed: { (error , response) in
+            
+            if error == nil , let data = response{
+                
+                let json = JSON(data)
+                
+                print("==============\(json)")
+               
+            }
+
+            
+        }) { (error, nil) in
+
+            SVProgressHUD.showError(withStatus: "设备id获取失败")
+            SVProgressHUD.dismiss(withDelay: 0.75)
+                   
+        }
     }
 }

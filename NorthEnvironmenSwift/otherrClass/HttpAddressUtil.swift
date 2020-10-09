@@ -51,7 +51,8 @@ struct BERKKURL {
     //取得故障信息
     public static let URL_GZtingk = "bkAlertController"
     
-    
+    //上传deviceId
+    public static let URL_deviceId = "bkSmsController?mid="
 
     
 }

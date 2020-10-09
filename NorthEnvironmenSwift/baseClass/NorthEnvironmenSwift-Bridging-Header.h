@@ -5,6 +5,9 @@
 
 #import "IQKeyboardManager.h"//键盘
 #import "SVProgressHUD.h"//菊花
-#import "WMZDialog.h"//弹窗
 
-#import "UIImageView+WebCache.h"/webimage
+#import "UIImageView+WebCache.h"
+
+#import <UMCommon/UMCommon.h>//友盟公共组件，基础组件
+#import <UMPush/UMessage.h>//Push组件
+//#import <UserNotifications/UserNotifiations.h>//Push必须的系统库
