@@ -114,9 +114,9 @@ class loginViewController: AnalyticsViewController {
         let headers:HTTPHeaders = [
                  "X-AUTH-TOKEN" : token!,
              ]
-        let devid = UserDefaults.string(forKey: .deviceId)
+        let devid = UserDefaults.string(forKey: .deviceId) ?? ""
 
-        BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.Url_Sever + BERKKURL.URL_deviceId + devid!, parameters: nil, headers: headers, successed: { (error , response) in
+        BKHttpTool.requestData(requestType: .Put, URLString: BERKKURL.Url_Sever + BERKKURL.URL_deviceId + devid, parameters: nil, headers: headers, successed: { (error , response) in
             
             if error == nil , let data = response{
                 

@@ -45,41 +45,41 @@ class operatingTwoDetaileController: AnalyticsViewController {
         
         case .one://烟气系统
             
-            backImage.image = UIImage.init(named: "YYXM_yqxt")
+            backImage.image = UIImage.init(named: "yqxt_backimage")
             titleArr = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
         case .two://原料系统
             
-            backImage.image = UIImage.init(named: "YYXM_ylxt")
+            backImage.image = UIImage.init(named: "ylxt_backimage")
             titleArr = ["脱硫剂喷射器进口压力","原料仓重量"]
             
         case .three://脱硫系统
             
-            backImage.image = UIImage.init(named: "YYXM_tlxt")
+            backImage.image = UIImage.init(named: "tlxt_backimage")
             titleArr = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
             
         case .four://水系统
             
-            backImage.image = UIImage.init(named: "YYXM_sxt")
+            backImage.image = UIImage.init(named: "sxt_backimage")
             titleArr = ["进水流量计","1#加湿机加水流量","2#加湿机加水流量","工艺水箱液位"]
             
         case .five://除尘系统
             
-            backImage.image = UIImage.init(named: "YYXM_ccxt")
+            backImage.image = UIImage.init(named: "ccxt_backimage")
             titleArr = ["除尘器出口温度","除尘器出口压力","1#加湿机压力","2#加湿机压力"]
             
         case .six://副产物系统
             
-            backImage.image = UIImage.init(named: "YYXM_fcwxt")
+            backImage.image = UIImage.init(named: "fcwxt_backimage")
             titleArr = ["副产物仓重量"]
             
         case .seven://风机系统
             
-            backImage.image = UIImage.init(named: "YYXM_fjxt")
+            backImage.image = UIImage.init(named: "fjxt_backimage")
             titleArr = ["高压变频器电流反馈","高压变频器频率反馈","高压变频器变频运行指示","高压变频器工频运行指示","高压变频器远程指示","高压变频器系统就绪指示","高压变频器运行指示","高压变频器变频报警","高压变频器变频故障","主引风机轴承温度1","主引风机轴承温度2","主引风机冷却水压力","主引风机风门执行器开度","主引风机电机轴承温度1","主引风机电机轴承温度2"]
             
         default://气系统
         
-            backImage.image = UIImage.init(named: "YYXM_qxt")
+            backImage.image = UIImage.init(named: "qxt_backimage")
             titleArr = ["储罐氮气主管压力","喷吹主管压力","空气流量计","氮气流量计"]
         
         }
