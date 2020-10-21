@@ -80,7 +80,7 @@ class operatingThreeDetaileController: AnalyticsViewController {
            
            let xAxis = ChartView.xAxis
            xAxis.labelPosition = .bottom //x轴的位置
-           xAxis.labelFont = .systemFont(ofSize: 12)
+           xAxis.labelFont = .systemFont(ofSize: 10)
            xAxis.drawGridLinesEnabled = false
            xAxis.granularity = 1.0
            xAxis.valueFormatter = self
@@ -109,7 +109,7 @@ class operatingThreeDetaileController: AnalyticsViewController {
 
             lineChartDataSet.mode = .cubicBezier// 模式为曲线模式
         
-           lineChartDataSet.valueFont = .systemFont(ofSize: 12)
+           lineChartDataSet.valueFont = .systemFont(ofSize: 10)
            
            let lineChartData = LineChartData(dataSet: lineChartDataSet)
            ChartView.data = lineChartData

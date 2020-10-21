@@ -63,7 +63,7 @@ extension operatingFourViewController:UITableViewDelegate,UITableViewDataSource{
     switch indexPath.row {
         case 0:
             let vc = operatingFourDetaileController()
-            vc.title = "已解除详情页"
+            vc.title = "故障中详情页"
             vc.typeStr = "0"
             vc.projrctStr = url//区分项目几
             self.navigationController?.pushViewController(vc, animated: true)
@@ -71,7 +71,7 @@ extension operatingFourViewController:UITableViewDelegate,UITableViewDataSource{
            break
         case 1:
             let vc = operatingFourDetaileController()
-            vc.title = "故障中详情页"
+            vc.title = "已解除详情页"
             vc.typeStr = "1"
             vc.projrctStr = url // 区分项目几
             self.navigationController?.pushViewController(vc, animated: true)
