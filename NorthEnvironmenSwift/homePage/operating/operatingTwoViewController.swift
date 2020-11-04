@@ -211,6 +211,7 @@ extension operatingTwoViewController:UITableViewDelegate,UITableViewDataSource{
         
         let vc = operatingThreeDetaileController()
         vc.title = "折线图详情页"
+        vc.pushUrl = url
         self.navigationController?.pushViewController(vc, animated: true)
         
         //总系统

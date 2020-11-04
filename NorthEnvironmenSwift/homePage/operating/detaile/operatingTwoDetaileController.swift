@@ -46,7 +46,7 @@ class operatingTwoDetaileController: AnalyticsViewController {
         case .one://烟气系统
             
             backImage.image = UIImage.init(named: "yqxt_backimage")
-            titleArr = ["脱硫塔入口温度","脱硫塔出口温度","脱硫塔入口压力","脱硫塔出口压力","1#喷射器进口压力","2#喷射器进口压力","3#喷射器进口压力"]
+            titleArr = ["冷风阀开度反馈","一氧化碳浓度检测1","原烟气挡板门开到位","原烟气挡板门关到位","净烟气挡板门开到位","净烟气挡板门关到位","旁路挡板门开到位","旁路挡板门关到位"]
         case .two://原料系统
             
             backImage.image = UIImage.init(named: "ylxt_backimage")
@@ -144,9 +144,9 @@ class operatingTwoDetaileController: AnalyticsViewController {
                         case .four://水系统
                             
                             self.contentArr.append(contentsOf:
-                                [json["data"]["TJRC04_31"].stringValue,
-                                json["data"]["TJRC04_32"].stringValue,
-                                json["data"]["TJRC04_33"].stringValue,
+                                [json["data"]["TJRC04_31"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                 json["data"]["TJRC04_32"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                 json["data"]["TJRC04_33"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                 json["data"]["TJRC04_34"].stringValue,
                                 ])
                             
@@ -190,8 +190,8 @@ class operatingTwoDetaileController: AnalyticsViewController {
                             self.contentArr.append(contentsOf:
                                 [json["data"]["TJRC04_35"].stringValue,
                                 json["data"]["TJRC04_36"].stringValue,
-                                json["data"]["TJRC04_37"].stringValue,
-                                json["data"]["TJRC04_38"].stringValue,
+                                json["data"]["TJRC04_37"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                json["data"]["TJRC04_38"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                 ])
                         
                         }
@@ -234,9 +234,9 @@ class operatingTwoDetaileController: AnalyticsViewController {
                         case .four://水系统
                             
                             self.contentArr.append(contentsOf:
-                                [json["data"]["TJRC05_31"].stringValue,
-                                json["data"]["TJRC05_32"].stringValue,
-                                json["data"]["TJRC05_33"].stringValue,
+                                [json["data"]["TJRC05_31"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                 json["data"]["TJRC05_32"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                 json["data"]["TJRC05_33"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                 json["data"]["TJRC05_34"].stringValue,
                                 ])
                             
@@ -280,8 +280,8 @@ class operatingTwoDetaileController: AnalyticsViewController {
                             self.contentArr.append(contentsOf:
                                 [json["data"]["TJRC05_35"].stringValue,
                                 json["data"]["TJRC05_36"].stringValue,
-                                json["data"]["TJRC05_37"].stringValue,
-                                json["data"]["TJRC05_38"].stringValue,
+                                json["data"]["TJRC05_37"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
+                                json["data"]["TJRC05_38"].stringValue.replacingOccurrences(of: "m3", with: "m³"),
                                 ])
                         
                         }
@@ -382,9 +382,132 @@ extension operatingTwoDetaileController:UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = operatingThreeDetaileController()
-        vc.title = "折线图详情页"
-        self.navigationController?.pushViewController(vc, animated: true)
+        if contentArr.count > 0 {
+            
+            let vc = operatingThreeDetaileController()
+            vc.title = "折线图详情页"
+            vc.pushUrl = url
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            switch self.type {
+            
+            case .one://烟气系统
+        
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_39","TJRC04_40","TJRC04_41","TJRC04_42","TJRC04_43","TJRC04_44","TJRC04_45","TJRC04_46"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_39","TJRC05_40","TJRC05_41","TJRC05_42","TJRC05_43","TJRC05_44","TJRC05_45","TJRC05_46"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            case .two://原料系统
+                
+                //原料系统
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_28","TJRC04_29"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_28","TJRC05_29"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            case .three://脱硫系统
+                
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_02","TJRC04_03","TJRC04_04","TJRC04_05","TJRC04_06","TJRC04_07","TJRC04_08"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_02","TJRC05_03","TJRC05_04","TJRC05_05","TJRC05_06","TJRC05_07","TJRC05_08"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            case .four://水系统
+                
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_31","TJRC04_32","TJRC04_33","TJRC04_34"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_31","TJRC05_32","TJRC05_33","TJRC05_34"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            case .five://除尘系统
+                
+                //除尘系统
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_09","TJRC04_10","TJRC04_11","TJRC04_12"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_09","TJRC05_10","TJRC05_11","TJRC05_12"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            case .six://副产物系统
+                
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_30"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_30"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            case .seven://风机系统
+                
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_13","TJRC04_14","TJRC04_15","TJRC04_16","TJRC04_17","TJRC04_18","TJRC04_19","TJRC04_20","TJRC04_21","TJRC04_22","TJRC04_23","TJRC04_24","TJRC04_25","TJRC04_26","TJRC04_27"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_13","TJRC05_14","TJRC05_15","TJRC05_16","TJRC05_17","TJRC05_18","TJRC05_19","TJRC05_20","TJRC05_21","TJRC05_22","TJRC05_23","TJRC05_24","TJRC05_25","TJRC05_26","TJRC05_27"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+                
+            default://气系统
+            
+                vc.titleStr = self.titleArr[indexPath.row]
+                if self.url == "?itmeid=1" {
+                    
+                    let titleArr = ["TJRC04_35","TJRC04_36","TJRC04_37","TJRC04_38"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                }else{
+                    
+                    let titleArr = ["TJRC05_35","TJRC05_36","TJRC05_37","TJRC05_38"]
+                    vc.projrctStr = titleArr[indexPath.row]
+                    
+                }
+            
+            }
+            
+        }
         
     }
    

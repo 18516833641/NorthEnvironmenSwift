@@ -190,7 +190,7 @@ class operatingThreeDetaileController: AnalyticsViewController {
                             "X-AUTH-TOKEN" : token!,
                         ]
             
-                    print("\(BERKKURL.Url_Sever + BERKKURL.URL_GZtingk + "/" + projrctStr + "&" + typeStr)")
+//                    print("======\(BERKKURL.Url_Sever + BERKKURL.URL_Curve + "/" + projrctStr + "&" + typeStr)")
                     BKHttpTool.requestData(requestType: .Get, URLString: BERKKURL.Url_Sever + BERKKURL.URL_Curve + "/" + projrctStr + "&" + typeStr, parameters: nil, headers: headers, successed: { (error, response) in
                         
                         if error == nil , let data = response{
@@ -229,6 +229,7 @@ class operatingThreeDetaileController: AnalyticsViewController {
                         }
                         
                     }) { (error, nil) in
+//                        print("===============\(String(describing: error))")
                         SVProgressHUD.showError(withStatus: "登录已失效")
                         SVProgressHUD.dismiss(withDelay: 0.75)
                         let vc = loginViewController()
